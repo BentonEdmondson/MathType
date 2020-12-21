@@ -1,0 +1,17 @@
+{
+  "name": "mathtype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nut-tree/nut-js": "^1.5.0",
+    "robotjs": "^0.6.0"
+  },
+  "devDependencies": {}
+}
