@@ -27,16 +27,15 @@ Suspend, On
   Hotstring("Reset")
 
 SwapInChar(char, backspaceQty) {
-  Send, {bs %backspaceQty%}%char%
+  Send, {bs %backspaceQty%}
+  SendRaw, %char%
 }
 
 `;
 
-ahkScript += `^#!m::\n`
 for (let keyword of keywordSets.general) {
   if (keyword.output === ' ') keyword.output = '{Space}';
-  ahkScript += `  Hotstring(":*?B0COX:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
+  ahkScript += `Hotstring(":*?B0COX:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
 }
-ahkScript += `return\n`;
 
 fs.writeFileSync(`script.ahk`, '\uFEFF' + ahkScript);
