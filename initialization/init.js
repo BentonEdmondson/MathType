@@ -1,4 +1,4 @@
-var keywordSets = require('./keywordSets');
+var keywordSets = require('./keyword-sets');
 var prepareKeywordSet = require('./prepare-keyword-set');
 
 for (var keywordSet of Object.values(keywordSets)) {

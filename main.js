@@ -40,8 +40,6 @@ for (let keyword of keywordSets.general) {
   // Make script activate with a hotkey
   // Allow alternate fonts
   // Allow alternate character elevations (sup, sub, etc.)
-  // Fix AHK {Space}
-  // Find all the best ahk header options that should be used
   // Make .follows only the characters it follows, not all the characters
   // If no other hotstring contains this one, this one should reset the recognizer (have the Z option)
   // - e.g. theta should reset the recognizer so thetau doesn't mess things up
