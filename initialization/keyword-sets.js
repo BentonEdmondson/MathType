@@ -67,7 +67,6 @@ module.exports = {
 
     { input: ' ', output: '\u2006' },
     { input: '  ', output: '\u2004' },
-    { input: '\\ ', output: '\u0020' },
     { input: 'quad', output: '\u2003' },
 
     { input: '/_', output: '∠' },

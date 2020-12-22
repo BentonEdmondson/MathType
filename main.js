@@ -34,7 +34,6 @@ SwapInChar(char, backspaceQty) {
 `;
 
 for (let keyword of keywordSets.general) {
-  if (keyword.output === ' ') keyword.output = '{Space}';
   ahkScript += `Hotstring(":*?B0COX:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
 }
 
