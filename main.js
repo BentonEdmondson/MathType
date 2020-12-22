@@ -34,7 +34,10 @@ SwapInChar(char, backspaceQty) {
 `;
 
 for (let keyword of keywordSets.general) {
-  ahkScript += `Hotstring(":*?B0COX:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
+  ahkScript += `Hotstring(":*?B0COX`
+  if (keywordSets.general.every(candidateKeyword => !candidateKeyword.follows.slice(0, -1).includes(keyword.output)))
+    ahkScript += 'Z';
+  ahkScript += `:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
 }
 
 fs.writeFileSync(`script.ahk`, '\uFEFF' + ahkScript);
