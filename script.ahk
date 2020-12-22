@@ -16,1018 +16,285 @@
 ~RButton::
   Hotstring("Reset")
   return
-:*?B0CO:varepsilon::
-  Send, {bs 7}
-  SendRaw, 𝜀
-  return
-:*?B0CO:vartheta::
-  Send, {bs 7}
-  SendRaw, 𝜗
-  return
-:*?B0CO:root(3)::
-  Send, {bs 5}
-  SendRaw, ∛
-  return
-:*?B0CO:root(4)::
-  Send, {bs 5}
-  SendRaw, ∜
-  return
-:*?B0CO:diamond::
-  Send, {bs 6}
-  SendRaw, ⋄
-  return
-:*?B0CO: cancel::
-  Send, {bs 6}
-  SendRaw, ̸
-  return
-:*?B0CO:epsilon::
-  Send, {bs 4}
-  SendRaw, 𝜖
-  return
-:*?B0CO:upsilon::
-  Send, {bs 4}
-  SendRaw, 𝜐
-  return
-:*?B0CO:iiiint::
-  Send, {bs 4}
-  SendRaw, ⨌
-  return
-:*?B0CO:oiiint::
-  Send, {bs 4}
-  SendRaw, ∰
-  return
-:*?B0CO:square::
-  Send, {bs 5}
-  SendRaw, □
-  return
-:*?B0CO:Delta=::
-  Send, {bs 1}
-  SendRaw, ≜
-  return
-:*?B0CO:(1/10)::
-  Send, {bs 5}
-  SendRaw, ⅒
-  return
-:*?B0CO:arcsin::
-  Send, {bs 5}
-  SendRaw, arcsin
-  return
-:*?B0CO:arccos::
-  Send, {bs 5}
-  SendRaw, arccos
-  return
-:*?B0CO:arctan::
-  Send, {bs 5}
-  SendRaw, arctan
-  return
-:*?B0CO:Lambda::
-  Send, {bs 5}
-  SendRaw, 𝛬
-  return
-:*?B0CO:lambda::
-  Send, {bs 5}
-  SendRaw, 𝜆
-  return
-:*?B0CO:varphi::
-  Send, {bs 5}
-  SendRaw, 𝜑
-  return
-:*?B0CO:iiint::
-  Send, {bs 3}
-  SendRaw, ∭
-  return
-:*?B0CO:oiint::
-  Send, {bs 3}
-  SendRaw, ∯
-  return
-:*?B0CO:aleph::
-  Send, {bs 4}
-  SendRaw, ℵ
-  return
-:*?B0CO:cdots::
-  Send, {bs 4}
-  SendRaw, ⋯
-  return
-:*?B0CO:vdots::
-  Send, {bs 4}
-  SendRaw, ⋮
-  return
-:*?B0CO:ddots::
-  Send, {bs 4}
-  SendRaw, ⋱
-  return
-:*?B0CO:frown::
-  Send, {bs 4}
-  SendRaw, ⏜
-  return
-:*?B0CO:(1/4)::
-  Send, {bs 4}
-  SendRaw, ¼
-  return
-:*?B0CO:(1/2)::
-  Send, {bs 4}
-  SendRaw, ½
-  return
-:*?B0CO:(3/4)::
-  Send, {bs 4}
-  SendRaw, ¾
-  return
-:*?B0CO:(1/7)::
-  Send, {bs 4}
-  SendRaw, ⅐
-  return
-:*?B0CO:(1/9)::
-  Send, {bs 4}
-  SendRaw, ⅑
-  return
-:*?B0CO:(1/3)::
-  Send, {bs 4}
-  SendRaw, ⅓
-  return
-:*?B0CO:(2/3)::
-  Send, {bs 4}
-  SendRaw, ⅔
-  return
-:*?B0CO:(1/5)::
-  Send, {bs 4}
-  SendRaw, ⅕
-  return
-:*?B0CO:(2/5)::
-  Send, {bs 4}
-  SendRaw, ⅖
-  return
-:*?B0CO:(3/5)::
-  Send, {bs 4}
-  SendRaw, ⅗
-  return
-:*?B0CO:(4/5)::
-  Send, {bs 4}
-  SendRaw, ⅘
-  return
-:*?B0CO:(1/6)::
-  Send, {bs 4}
-  SendRaw, ⅙
-  return
-:*?B0CO:(5/6)::
-  Send, {bs 4}
-  SendRaw, ⅚
-  return
-:*?B0CO:(1/8)::
-  Send, {bs 4}
-  SendRaw, ⅛
-  return
-:*?B0CO:(3/8)::
-  Send, {bs 4}
-  SendRaw, ⅜
-  return
-:*?B0CO:(5/8)::
-  Send, {bs 4}
-  SendRaw, ⅝
-  return
-:*?B0CO:(7/8)::
-  Send, {bs 4}
-  SendRaw, ⅞
-  return
-:*?B0CO: ddot::
-  Send, {bs 4}
-  SendRaw, ̈
-  return
-:*?B0CO:Gamma::
-  Send, {bs 4}
-  SendRaw, 𝛤
-  return
-:*?B0CO:Delta::
-  Send, {bs 2}
-  SendRaw, 𝛥
-  return
-:*?B0CO:Theta::
-  Send, {bs 4}
-  SendRaw, 𝛩
-  return
-:*?B0CO:Sigma::
-  Send, {bs 4}
-  SendRaw, 𝛴
-  return
-:*?B0CO:Omega::
-  Send, {bs 4}
-  SendRaw, 𝛺
-  return
-:*?B0CO:alpha::
-  Send, {bs 4}
-  SendRaw, 𝛼
-  return
-:*?B0CO:gamma::
-  Send, {bs 4}
-  SendRaw, 𝛾
-  return
-:*?B0CO:delta::
-  Send, {bs 2}
-  SendRaw, 𝛿
-  return
-:*?B0CO:theta::
-  Send, {bs 4}
-  SendRaw, 𝜃
-  return
-:*?B0CO:kappa::
-  Send, {bs 4}
-  SendRaw, 𝜅
-  return
-:*?B0CO:sigma::
-  Send, {bs 4}
-  SendRaw, 𝜎
-  return
-:*?B0CO:omega::
-  Send, {bs 4}
-  SendRaw, 𝜔
-  return
-:*?B0CO:|><|::
-  Send, {bs 1}
-  SendRaw, ⋈
-  return
-:*?B0CO:prod::
-  Send, {bs 3}
-  SendRaw, ∏
-  return
-:*?B0CO:sqrt::
-  Send, {bs 3}
-  SendRaw, √
-  return
-:*?B0CO:iint::
-  Send, {bs 2}
-  SendRaw, ∬
-  return
-:*?B0CO:oint::
-  Send, {bs 2}
-  SendRaw, ∮
-  return
-:*?B0CO:grad::
-  Send, {bs 3}
-  SendRaw, ∇
-  return
-:*?B0CO:''''::
-  Send, {bs 1}
-  SendRaw, ⁗
-  return
-:*?B0CO:quad::
-  Send, {bs 3}
-  SendRaw,  
-  return
-:*?B0CO:prop::
-  Send, {bs 3}
-  SendRaw, ∝
-  return
-:*?B0CO:sube::
-  Send, {bs 1}
-  SendRaw, ⊆
-  return
-:*?B0CO:supe::
-  Send, {bs 1}
-  SendRaw, ⊇
-  return
-:*?B0CO:lArr::
-  Send, {bs 3}
-  SendRaw, ⇐
-  return
-:*?B0CO:uarr::
-  Send, {bs 3}
-  SendRaw, ↑
-  return
-:*?B0CO:darr::
-  Send, {bs 3}
-  SendRaw, ↓
-  return
-:*?B0CO:>->>::
-  Send, {bs 1}
-  SendRaw, ⤖
-  return
-:*?B0CO: hat::
-  Send, {bs 3}
-  SendRaw, ̂
-  return
-:*?B0CO: bar::
-  Send, {bs 3}
-  SendRaw, ̅
-  return
-:*?B0CO: vec::
-  Send, {bs 3}
-  SendRaw, ⃗
-  return
-:*?B0CO: dot::
-  Send, {bs 3}
-  SendRaw, ̇
-  return
-:*?B0CO:sinh::
-  Send, {bs 3}
-  SendRaw, sinh
-  return
-:*?B0CO:cosh::
-  Send, {bs 3}
-  SendRaw, cosh
-  return
-:*?B0CO:tanh::
-  Send, {bs 3}
-  SendRaw, tanh
-  return
-:*?B0CO:sech::
-  Send, {bs 3}
-  SendRaw, sech
-  return
-:*?B0CO:csch::
-  Send, {bs 3}
-  SendRaw, csch
-  return
-:*?B0CO:coth::
-  Send, {bs 3}
-  SendRaw, coth
-  return
-:*?B0CO:beta::
-  Send, {bs 3}
-  SendRaw, 𝛽
-  return
-:*?B0CO:zeta::
-  Send, {bs 3}
-  SendRaw, 𝜁
-  return
-:*?B0CO:iota::
-  Send, {bs 3}
-  SendRaw, 𝜄
-  return
-:*?B0CO:***::
-  Send, {bs 1}
-  SendRaw, ⋆
-  return
-:*?B0CO:|><::
-  Send, {bs 2}
-  SendRaw, ⋉
-  return
-:*?B0CO:><|::
-  Send, {bs 2}
-  SendRaw, ⋊
-  return
-:*?B0CO:sum::
-  Send, {bs 2}
-  SendRaw, ∑
-  return
-:*?B0CO:^^^::
-  Send, {bs 1}
-  SendRaw, ⋀
-  return
-:*?B0CO:vvv::
-  Send, {bs 1}
-  SendRaw, ⋁
-  return
-:*?B0CO:nnn::
-  Send, {bs 1}
-  SendRaw, ⋂
-  return
-:*?B0CO:uuu::
-  Send, {bs 1}
-  SendRaw, ⋃
-  return
-:*?B0CO:int::
-  Send, {bs 1}
-  SendRaw, ∫
-  return
-:*?B0CO:del::
-  Send, {bs 2}
-  SendRaw, ∂
-  return
-:*?B0CO:Del::
-  Send, {bs 2}
-  SendRaw, ∆
-  return
-:*?B0CO:...::
-  Send, {bs 2}
-  SendRaw, …
-  return
-:*?B0CO:'''::
-  Send, {bs 1}
-  SendRaw, ‴
-  return
-:*?B0CO:/_\::
-  Send, {bs 1}
-  SendRaw, △
-  return
-:*?B0CO:-<=::
-  Send, {bs 1}
-  SendRaw, ≼
-  return
-:*?B0CO:>-=::
-  Send, {bs 1}
-  SendRaw, ≽
-  return
-:*?B0CO:!in::
-  Send, {bs 2}
-  SendRaw, ∉
-  return
-:*?B0CO:sub::
-  Send, {bs 2}
-  SendRaw, ⊂
-  return
-:*?B0CO:sup::
-  Send, {bs 2}
-  SendRaw, ⊃
-  return
-:*?B0CO:and::
-  Send, {bs 2}
-  SendRaw, and
-  return
-:*?B0CO:not::
-  Send, {bs 2}
-  SendRaw, ¬
-  return
-:*?B0CO:_|_::
-  Send, {bs 1}
-  SendRaw, ⊥
-  return
-:*?B0CO:|--::
-  Send, {bs 2}
-  SendRaw, ⊢
-  return
-:*?B0CO:|==::
-  Send, {bs 2}
-  SendRaw, ⊨
-  return
-:*?B0CO:<=>::
-  Send, {bs 1}
-  SendRaw, ⇔
-  return
-:*?B0CO:-->::
-  Send, {bs 2}
-  SendRaw, ⟶
-  return
-:*?B0CO:>->::
-  Send, {bs 1}
-  SendRaw, ↣
-  return
-:*?B0CO:->>::
-  Send, {bs 1}
-  SendRaw, ↠
-  return
-:*?B0CO:|->::
-  Send, {bs 2}
-  SendRaw, ↦
-  return
-:*?B0CO:<--::
-  Send, {bs 1}
-  SendRaw, ⟵
-  return
-:*?B0CO:<->::
-  Send, {bs 1}
-  SendRaw, ↔
-  return
-:*?B0CO: ul::
-  Send, {bs 2}
-  SendRaw, ̲
-  return
-:*?B0CO:sin::
-  Send, {bs 2}
-  SendRaw, sin
-  return
-:*?B0CO:cos::
-  Send, {bs 2}
-  SendRaw, cos
-  return
-:*?B0CO:tan::
-  Send, {bs 2}
-  SendRaw, tan
-  return
-:*?B0CO:sec::
-  Send, {bs 2}
-  SendRaw, sec
-  return
-:*?B0CO:csc::
-  Send, {bs 2}
-  SendRaw, csc
-  return
-:*?B0CO:cot::
-  Send, {bs 2}
-  SendRaw, cot
-  return
-:*?B0CO:exp::
-  Send, {bs 2}
-  SendRaw, exp
-  return
-:*?B0CO:log::
-  Send, {bs 2}
-  SendRaw, log
-  return
-:*?B0CO:mod::
-  Send, {bs 2}
-  SendRaw, mod
-  return
-:*?B0CO:lim::
-  Send, {bs 2}
-  SendRaw, lim
-  return
-:*?B0CO:Phi::
-  Send, {bs 2}
-  SendRaw, 𝛷
-  return
-:*?B0CO:Psi::
-  Send, {bs 2}
-  SendRaw, 𝛹
-  return
-:*?B0CO:eta::
-  Send, {bs 2}
-  SendRaw, 𝜂
-  return
-:*?B0CO:rho::
-  Send, {bs 2}
-  SendRaw, 𝜌
-  return
-:*?B0CO:tau::
-  Send, {bs 2}
-  SendRaw, 𝜏
-  return
-:*?B0CO:phi::
-  Send, {bs 2}
-  SendRaw, 𝜙
-  return
-:*?B0CO:chi::
-  Send, {bs 2}
-  SendRaw, 𝜒
-  return
-:*?B0CO:psi::
-  Send, {bs 2}
-  SendRaw, 𝜓
-  return
-:*?B0CO:**::
-  Send, {bs 1}
-  SendRaw, ∗
-  return
-:*?B0CO:xx::
-  Send, {bs 1}
-  SendRaw, ×
-  return
-:?B0CO:-::
-  Send, {bs 1}
-  SendRaw, ÷
-  return
-:*?B0CO:o+::
-  Send, {bs 1}
-  SendRaw, ⊕
-  return
-:*?B0CO:ox::
-  Send, {bs 1}
-  SendRaw, ⊗
-  return
-:*?B0CO:o.::
-  Send, {bs 1}
-  SendRaw, ⊙
-  return
-:*?B0CO:^^::
-  Send, {bs 1}
-  SendRaw, ∧
-  return
-:*?B0CO:vv::
-  Send, {bs 1}
-  SendRaw, ∨
-  return
-:*?B0CO:nn::
-  Send, {bs 1}
-  SendRaw, ∩
-  return
-:*?B0CO:uu::
-  Send, {bs 1}
-  SendRaw, ∪
-  return
-:*?B0CO:+-::
-  Send, {bs 1}
-  SendRaw, ±
-  return
-:*?B0CO:-+::
-  Send, {bs 1}
-  SendRaw, ∓
-  return
-:*?B0CO:O/::
-  Send, {bs 1}
-  SendRaw, ∅
-  return
-:*?B0CO:oo::
-  Send, {bs 1}
-  SendRaw, ∞
-  return
-:*?B0CO::.::
-  Send, {bs 1}
-  SendRaw, ∴
-  return
-:*?B0CO::'::
-  Send, {bs 1}
-  SendRaw, ∵
-  return
-:*?B0CO:''::
-  Send, {bs 1}
-  SendRaw, ″
-  return
-:*?B0CO:  ::
-  Send, {bs 1}
-  SendRaw,  
-  return
-:*?B0CO:\ ::
-  Send, {bs 1}
-  Send, {Space}
-  return
-:*?B0CO:/_::
-  Send, {bs 1}
-  SendRaw, ∠
-  return
-:*?B0CO:CC::
-  Send, {bs 1}
-  SendRaw, ℂ
-  return
-:*?B0CO:NN::
-  Send, {bs 1}
-  SendRaw, ℕ
-  return
-:*?B0CO:QQ::
-  Send, {bs 1}
-  SendRaw, ℚ
-  return
-:*?B0CO:RR::
-  Send, {bs 1}
-  SendRaw, ℝ
-  return
-:*?B0CO:ZZ::
-  Send, {bs 1}
-  SendRaw, ℤ
-  return
-:*?B0CO:AA::
-  Send, {bs 1}
-  SendRaw, ∀
-  return
-:*?B0CO:EE::
-  Send, {bs 1}
-  SendRaw, ∃
-  return
-:*?B0CO::=::
-  Send, {bs 1}
-  SendRaw, ≔
-  return
-:*?B0CO:!=::
-  Send, {bs 1}
-  SendRaw, ≠
-  return
-:*?B0CO:?=::
-  Send, {bs 1}
-  SendRaw, ≟
-  return
-:*?B0CO:-=::
-  Send, {bs 1}
-  SendRaw, ≡
-  return
-:*?B0CO:~=::
-  Send, {bs 1}
-  SendRaw, ≅
-  return
-:*?B0CO:~~::
-  Send, {bs 1}
-  SendRaw, ≈
-  return
-:*?B0CO:<<::
-  Send, {bs 1}
-  SendRaw, ≪
-  return
-:*?B0CO:>>::
-  Send, {bs 1}
-  SendRaw, ≫
-  return
-:*?B0CO:<=::
-  Send, {bs 1}
-  SendRaw, ≤
-  return
-:*?B0CO:>=::
-  Send, {bs 1}
-  SendRaw, ≥
-  return
-:*?B0CO:-<::
-  Send, {bs 1}
-  SendRaw, ≺
-  return
-:*?B0CO:>-::
-  Send, {bs 1}
-  SendRaw, ≻
-  return
-:*?B0CO:in::
-  Send, {bs 1}
-  SendRaw, ∈
-  return
-:*?B0CO:or::
-  Send, {bs 1}
-  SendRaw, or
-  return
-:*?B0CO:if::
-  Send, {bs 1}
-  SendRaw, if
-  return
-:*?B0CO:TT::
-  Send, {bs 1}
-  SendRaw, ⊤
-  return
-:*?B0CO:|_::
-  Send, {bs 1}
-  SendRaw, ⌊
-  return
-:*?B0CO:_|::
-  Send, {bs 1}
-  SendRaw, ⌋
-  return
-:*?B0CO:|~::
-  Send, {bs 1}
-  SendRaw, ⌈
-  return
-:*?B0CO:~|::
-  Send, {bs 1}
-  SendRaw, ⌉
-  return
-:?B0CO:(::
-  Send, {bs 1}
-  SendRaw, ⟨
-  return
-:*?B0CO::)::
-  Send, {bs 1}
-  SendRaw, ⟩
-  return
-:*?B0CO:=>::
-  Send, {bs 1}
-  SendRaw, ⇒
-  return
-:*?B0CO:->::
-  Send, {bs 1}
-  SendRaw, →
-  return
-:*?B0CO:<-::
-  Send, {bs 1}
-  SendRaw, ←
-  return
-:*?B0CO:ln::
-  Send, {bs 1}
-  SendRaw, ln
-  return
-:*?B0CO:Xi::
-  Send, {bs 1}
-  SendRaw, 𝛯
-  return
-:*?B0CO:Pi::
-  Send, {bs 1}
-  SendRaw, 𝛱
-  return
-:*?B0CO:mu::
-  Send, {bs 1}
-  SendRaw, 𝜇
-  return
-:*?B0CO:nu::
-  Send, {bs 1}
-  SendRaw, 𝜈
-  return
-:*?B0CO:xi::
-  Send, {bs 1}
-  SendRaw, 𝜉
-  return
-:*?B0CO:pi::
-  Send, {bs 1}
-  SendRaw, 𝜋
-  return
-:*?B0CO:+::
-  SendRaw, +
-  return
-:*?B0CO:-::
-  SendRaw, −
-  return
-:*?B0CO:*::
-  SendRaw, ⋅
-  return
-:*?B0CO:/::
-  SendRaw, ∕
-  return
-:*?B0CO:\::
-  SendRaw, ∖
-  return
-:*?B0CO:!::
-  SendRaw, !
-  return
-:*?B0CO:'::
-  SendRaw, ′
-  return
-:*?B0CO: ::
-  SendRaw,  
-  return
-:*?B0CO:@::
-  SendRaw, ∘
-  return
-:*?B0CO:=::
-  SendRaw, =
-  return
-:*?B0CO:<::
-  SendRaw, <
-  return
-:*?B0CO:>::
-  SendRaw, >
-  return
-:*?B0CO:(::
-  SendRaw, (
-  return
-:*?B0CO:)::
-  SendRaw, )
-  return
-:*?B0CO:[::
-  SendRaw, [
-  return
-:*?B0CO:]::
-  SendRaw, ]
-  return
-:*?B0CO:{::
-  SendRaw, {
-  return
-:*?B0CO:}::
-  SendRaw, }
-  return
-:*?B0CO:|::
-  SendRaw, |
-  return
-:*?B0CO:a::
-  SendRaw, 𝑎
-  return
-:*?B0CO:b::
-  SendRaw, 𝑏
-  return
-:*?B0CO:c::
-  SendRaw, 𝑐
-  return
-:*?B0CO:d::
-  SendRaw, 𝑑
-  return
-:*?B0CO:e::
-  SendRaw, 𝑒
-  return
-:*?B0CO:f::
-  SendRaw, 𝑓
-  return
-:*?B0CO:g::
-  SendRaw, 𝑔
-  return
-:*?B0CO:h::
-  SendRaw, ℎ
-  return
-:*?B0CO:i::
-  SendRaw, 𝑖
-  return
-:*?B0CO:j::
-  SendRaw, 𝑗
-  return
-:*?B0CO:k::
-  SendRaw, 𝑘
-  return
-:*?B0CO:l::
-  SendRaw, 𝑙
-  return
-:*?B0CO:m::
-  SendRaw, 𝑚
-  return
-:*?B0CO:n::
-  SendRaw, 𝑛
-  return
-:*?B0CO:o::
-  SendRaw, 𝑜
-  return
-:*?B0CO:p::
-  SendRaw, 𝑝
-  return
-:*?B0CO:q::
-  SendRaw, 𝑞
-  return
-:*?B0CO:r::
-  SendRaw, 𝑟
-  return
-:*?B0CO:s::
-  SendRaw, 𝑠
-  return
-:*?B0CO:t::
-  SendRaw, 𝑡
-  return
-:*?B0CO:u::
-  SendRaw, 𝑢
-  return
-:*?B0CO:v::
-  SendRaw, 𝑣
-  return
-:*?B0CO:w::
-  SendRaw, 𝑤
-  return
-:*?B0CO:x::
-  SendRaw, 𝑥
-  return
-:*?B0CO:y::
-  SendRaw, 𝑦
-  return
-:*?B0CO:z::
-  SendRaw, 𝑧
-  return
-:*?B0CO:A::
-  SendRaw, 𝐴
-  return
-:*?B0CO:B::
-  SendRaw, 𝐵
-  return
-:*?B0CO:C::
-  SendRaw, 𝐶
-  return
-:*?B0CO:D::
-  SendRaw, 𝐷
-  return
-:*?B0CO:E::
-  SendRaw, 𝐸
-  return
-:*?B0CO:F::
-  SendRaw, 𝐹
-  return
-:*?B0CO:G::
-  SendRaw, 𝐺
-  return
-:*?B0CO:H::
-  SendRaw, 𝐻
-  return
-:*?B0CO:I::
-  SendRaw, 𝐼
-  return
-:*?B0CO:J::
-  SendRaw, 𝐽
-  return
-:*?B0CO:K::
-  SendRaw, 𝐾
-  return
-:*?B0CO:L::
-  SendRaw, 𝐿
-  return
-:*?B0CO:M::
-  SendRaw, 𝑀
-  return
-:*?B0CO:N::
-  SendRaw, 𝑁
-  return
-:*?B0CO:O::
-  SendRaw, 𝑂
-  return
-:*?B0CO:P::
-  SendRaw, 𝑃
-  return
-:*?B0CO:Q::
-  SendRaw, 𝑄
-  return
-:*?B0CO:R::
-  SendRaw, 𝑅
-  return
-:*?B0CO:S::
-  SendRaw, 𝑆
-  return
-:*?B0CO:T::
-  SendRaw, 𝑇
-  return
-:*?B0CO:U::
-  SendRaw, 𝑈
-  return
-:*?B0CO:V::
-  SendRaw, 𝑉
-  return
-:*?B0CO:W::
-  SendRaw, 𝑊
-  return
-:*?B0CO:X::
-  SendRaw, 𝑋
-  return
-:*?B0CO:Y::
-  SendRaw, 𝑌
-  return
-:*?B0CO:Z::
-  SendRaw, 𝑍
-  return
-:*?B0CO:0::
-  SendRaw, 0
-  return
-:*?B0CO:1::
-  SendRaw, 1
-  return
-:*?B0CO:2::
-  SendRaw, 2
-  return
-:*?B0CO:3::
-  SendRaw, 3
-  return
-:*?B0CO:4::
-  SendRaw, 4
-  return
-:*?B0CO:5::
-  SendRaw, 5
-  return
-:*?B0CO:6::
-  SendRaw, 6
-  return
-:*?B0CO:7::
-  SendRaw, 7
-  return
-:*?B0CO:8::
-  SendRaw, 8
-  return
-:*?B0CO:9::
-  SendRaw, 9
-  return
+
+SwapInChar(char, backspaceQty) {
+  Send, {bs %backspaceQty%}%char%
+}
+
+^#!m::
+  Hotstring(":*?B0COX:varepsilon", Func("SwapInChar").Bind("𝜀", 7))
+  Hotstring(":*?B0COX:vartheta", Func("SwapInChar").Bind("𝜗", 7))
+  Hotstring(":*?B0COX:root(3)", Func("SwapInChar").Bind("∛", 5))
+  Hotstring(":*?B0COX:root(4)", Func("SwapInChar").Bind("∜", 5))
+  Hotstring(":*?B0COX:diamond", Func("SwapInChar").Bind("⋄", 6))
+  Hotstring(":*?B0COX: cancel", Func("SwapInChar").Bind("̸", 6))
+  Hotstring(":*?B0COX:epsilon", Func("SwapInChar").Bind("𝜖", 4))
+  Hotstring(":*?B0COX:upsilon", Func("SwapInChar").Bind("𝜐", 4))
+  Hotstring(":*?B0COX:iiiint", Func("SwapInChar").Bind("⨌", 4))
+  Hotstring(":*?B0COX:oiiint", Func("SwapInChar").Bind("∰", 4))
+  Hotstring(":*?B0COX:square", Func("SwapInChar").Bind("□", 5))
+  Hotstring(":*?B0COX:Delta=", Func("SwapInChar").Bind("≜", 1))
+  Hotstring(":*?B0COX:(1/10)", Func("SwapInChar").Bind("⅒", 5))
+  Hotstring(":*?B0COX:arcsin", Func("SwapInChar").Bind("arcsin", 5))
+  Hotstring(":*?B0COX:arccos", Func("SwapInChar").Bind("arccos", 5))
+  Hotstring(":*?B0COX:arctan", Func("SwapInChar").Bind("arctan", 5))
+  Hotstring(":*?B0COX:Lambda", Func("SwapInChar").Bind("𝛬", 5))
+  Hotstring(":*?B0COX:lambda", Func("SwapInChar").Bind("𝜆", 5))
+  Hotstring(":*?B0COX:varphi", Func("SwapInChar").Bind("𝜑", 5))
+  Hotstring(":*?B0COX:iiint", Func("SwapInChar").Bind("∭", 3))
+  Hotstring(":*?B0COX:oiint", Func("SwapInChar").Bind("∯", 3))
+  Hotstring(":*?B0COX:aleph", Func("SwapInChar").Bind("ℵ", 4))
+  Hotstring(":*?B0COX:cdots", Func("SwapInChar").Bind("⋯", 4))
+  Hotstring(":*?B0COX:vdots", Func("SwapInChar").Bind("⋮", 4))
+  Hotstring(":*?B0COX:ddots", Func("SwapInChar").Bind("⋱", 4))
+  Hotstring(":*?B0COX:frown", Func("SwapInChar").Bind("⏜", 4))
+  Hotstring(":*?B0COX:(1/4)", Func("SwapInChar").Bind("¼", 4))
+  Hotstring(":*?B0COX:(1/2)", Func("SwapInChar").Bind("½", 4))
+  Hotstring(":*?B0COX:(3/4)", Func("SwapInChar").Bind("¾", 4))
+  Hotstring(":*?B0COX:(1/7)", Func("SwapInChar").Bind("⅐", 4))
+  Hotstring(":*?B0COX:(1/9)", Func("SwapInChar").Bind("⅑", 4))
+  Hotstring(":*?B0COX:(1/3)", Func("SwapInChar").Bind("⅓", 4))
+  Hotstring(":*?B0COX:(2/3)", Func("SwapInChar").Bind("⅔", 4))
+  Hotstring(":*?B0COX:(1/5)", Func("SwapInChar").Bind("⅕", 4))
+  Hotstring(":*?B0COX:(2/5)", Func("SwapInChar").Bind("⅖", 4))
+  Hotstring(":*?B0COX:(3/5)", Func("SwapInChar").Bind("⅗", 4))
+  Hotstring(":*?B0COX:(4/5)", Func("SwapInChar").Bind("⅘", 4))
+  Hotstring(":*?B0COX:(1/6)", Func("SwapInChar").Bind("⅙", 4))
+  Hotstring(":*?B0COX:(5/6)", Func("SwapInChar").Bind("⅚", 4))
+  Hotstring(":*?B0COX:(1/8)", Func("SwapInChar").Bind("⅛", 4))
+  Hotstring(":*?B0COX:(3/8)", Func("SwapInChar").Bind("⅜", 4))
+  Hotstring(":*?B0COX:(5/8)", Func("SwapInChar").Bind("⅝", 4))
+  Hotstring(":*?B0COX:(7/8)", Func("SwapInChar").Bind("⅞", 4))
+  Hotstring(":*?B0COX: ddot", Func("SwapInChar").Bind("̈", 4))
+  Hotstring(":*?B0COX:Gamma", Func("SwapInChar").Bind("𝛤", 4))
+  Hotstring(":*?B0COX:Delta", Func("SwapInChar").Bind("𝛥", 2))
+  Hotstring(":*?B0COX:Theta", Func("SwapInChar").Bind("𝛩", 4))
+  Hotstring(":*?B0COX:Sigma", Func("SwapInChar").Bind("𝛴", 4))
+  Hotstring(":*?B0COX:Omega", Func("SwapInChar").Bind("𝛺", 4))
+  Hotstring(":*?B0COX:alpha", Func("SwapInChar").Bind("𝛼", 4))
+  Hotstring(":*?B0COX:gamma", Func("SwapInChar").Bind("𝛾", 4))
+  Hotstring(":*?B0COX:delta", Func("SwapInChar").Bind("𝛿", 2))
+  Hotstring(":*?B0COX:theta", Func("SwapInChar").Bind("𝜃", 4))
+  Hotstring(":*?B0COX:kappa", Func("SwapInChar").Bind("𝜅", 4))
+  Hotstring(":*?B0COX:sigma", Func("SwapInChar").Bind("𝜎", 4))
+  Hotstring(":*?B0COX:omega", Func("SwapInChar").Bind("𝜔", 4))
+  Hotstring(":*?B0COX:|><|", Func("SwapInChar").Bind("⋈", 1))
+  Hotstring(":*?B0COX:prod", Func("SwapInChar").Bind("∏", 3))
+  Hotstring(":*?B0COX:sqrt", Func("SwapInChar").Bind("√", 3))
+  Hotstring(":*?B0COX:iint", Func("SwapInChar").Bind("∬", 2))
+  Hotstring(":*?B0COX:oint", Func("SwapInChar").Bind("∮", 2))
+  Hotstring(":*?B0COX:grad", Func("SwapInChar").Bind("∇", 3))
+  Hotstring(":*?B0COX:''''", Func("SwapInChar").Bind("⁗", 1))
+  Hotstring(":*?B0COX:quad", Func("SwapInChar").Bind(" ", 3))
+  Hotstring(":*?B0COX:prop", Func("SwapInChar").Bind("∝", 3))
+  Hotstring(":*?B0COX:sube", Func("SwapInChar").Bind("⊆", 1))
+  Hotstring(":*?B0COX:supe", Func("SwapInChar").Bind("⊇", 1))
+  Hotstring(":*?B0COX:lArr", Func("SwapInChar").Bind("⇐", 3))
+  Hotstring(":*?B0COX:uarr", Func("SwapInChar").Bind("↑", 3))
+  Hotstring(":*?B0COX:darr", Func("SwapInChar").Bind("↓", 3))
+  Hotstring(":*?B0COX:>->>", Func("SwapInChar").Bind("⤖", 1))
+  Hotstring(":*?B0COX: hat", Func("SwapInChar").Bind("̂", 3))
+  Hotstring(":*?B0COX: bar", Func("SwapInChar").Bind("̅", 3))
+  Hotstring(":*?B0COX: vec", Func("SwapInChar").Bind("⃗", 3))
+  Hotstring(":*?B0COX: dot", Func("SwapInChar").Bind("̇", 3))
+  Hotstring(":*?B0COX:sinh", Func("SwapInChar").Bind("sinh", 3))
+  Hotstring(":*?B0COX:cosh", Func("SwapInChar").Bind("cosh", 3))
+  Hotstring(":*?B0COX:tanh", Func("SwapInChar").Bind("tanh", 3))
+  Hotstring(":*?B0COX:sech", Func("SwapInChar").Bind("sech", 3))
+  Hotstring(":*?B0COX:csch", Func("SwapInChar").Bind("csch", 3))
+  Hotstring(":*?B0COX:coth", Func("SwapInChar").Bind("coth", 3))
+  Hotstring(":*?B0COX:beta", Func("SwapInChar").Bind("𝛽", 3))
+  Hotstring(":*?B0COX:zeta", Func("SwapInChar").Bind("𝜁", 3))
+  Hotstring(":*?B0COX:iota", Func("SwapInChar").Bind("𝜄", 3))
+  Hotstring(":*?B0COX:***", Func("SwapInChar").Bind("⋆", 1))
+  Hotstring(":*?B0COX:|><", Func("SwapInChar").Bind("⋉", 2))
+  Hotstring(":*?B0COX:><|", Func("SwapInChar").Bind("⋊", 2))
+  Hotstring(":*?B0COX:sum", Func("SwapInChar").Bind("∑", 2))
+  Hotstring(":*?B0COX:^^^", Func("SwapInChar").Bind("⋀", 1))
+  Hotstring(":*?B0COX:vvv", Func("SwapInChar").Bind("⋁", 1))
+  Hotstring(":*?B0COX:nnn", Func("SwapInChar").Bind("⋂", 1))
+  Hotstring(":*?B0COX:uuu", Func("SwapInChar").Bind("⋃", 1))
+  Hotstring(":*?B0COX:int", Func("SwapInChar").Bind("∫", 1))
+  Hotstring(":*?B0COX:del", Func("SwapInChar").Bind("∂", 2))
+  Hotstring(":*?B0COX:Del", Func("SwapInChar").Bind("∆", 2))
+  Hotstring(":*?B0COX:...", Func("SwapInChar").Bind("…", 2))
+  Hotstring(":*?B0COX:'''", Func("SwapInChar").Bind("‴", 1))
+  Hotstring(":*?B0COX:/_\", Func("SwapInChar").Bind("△", 1))
+  Hotstring(":*?B0COX:-<=", Func("SwapInChar").Bind("≼", 1))
+  Hotstring(":*?B0COX:>-=", Func("SwapInChar").Bind("≽", 1))
+  Hotstring(":*?B0COX:!in", Func("SwapInChar").Bind("∉", 2))
+  Hotstring(":*?B0COX:sub", Func("SwapInChar").Bind("⊂", 2))
+  Hotstring(":*?B0COX:sup", Func("SwapInChar").Bind("⊃", 2))
+  Hotstring(":*?B0COX:and", Func("SwapInChar").Bind("and", 2))
+  Hotstring(":*?B0COX:not", Func("SwapInChar").Bind("¬", 2))
+  Hotstring(":*?B0COX:_|_", Func("SwapInChar").Bind("⊥", 1))
+  Hotstring(":*?B0COX:|--", Func("SwapInChar").Bind("⊢", 2))
+  Hotstring(":*?B0COX:|==", Func("SwapInChar").Bind("⊨", 2))
+  Hotstring(":*?B0COX:<=>", Func("SwapInChar").Bind("⇔", 1))
+  Hotstring(":*?B0COX:-->", Func("SwapInChar").Bind("⟶", 2))
+  Hotstring(":*?B0COX:>->", Func("SwapInChar").Bind("↣", 1))
+  Hotstring(":*?B0COX:->>", Func("SwapInChar").Bind("↠", 1))
+  Hotstring(":*?B0COX:|->", Func("SwapInChar").Bind("↦", 2))
+  Hotstring(":*?B0COX:<--", Func("SwapInChar").Bind("⟵", 1))
+  Hotstring(":*?B0COX:<->", Func("SwapInChar").Bind("↔", 1))
+  Hotstring(":*?B0COX: ul", Func("SwapInChar").Bind("̲", 2))
+  Hotstring(":*?B0COX:sin", Func("SwapInChar").Bind("sin", 2))
+  Hotstring(":*?B0COX:cos", Func("SwapInChar").Bind("cos", 2))
+  Hotstring(":*?B0COX:tan", Func("SwapInChar").Bind("tan", 2))
+  Hotstring(":*?B0COX:sec", Func("SwapInChar").Bind("sec", 2))
+  Hotstring(":*?B0COX:csc", Func("SwapInChar").Bind("csc", 2))
+  Hotstring(":*?B0COX:cot", Func("SwapInChar").Bind("cot", 2))
+  Hotstring(":*?B0COX:exp", Func("SwapInChar").Bind("exp", 2))
+  Hotstring(":*?B0COX:log", Func("SwapInChar").Bind("log", 2))
+  Hotstring(":*?B0COX:mod", Func("SwapInChar").Bind("mod", 2))
+  Hotstring(":*?B0COX:lim", Func("SwapInChar").Bind("lim", 2))
+  Hotstring(":*?B0COX:Phi", Func("SwapInChar").Bind("𝛷", 2))
+  Hotstring(":*?B0COX:Psi", Func("SwapInChar").Bind("𝛹", 2))
+  Hotstring(":*?B0COX:eta", Func("SwapInChar").Bind("𝜂", 2))
+  Hotstring(":*?B0COX:rho", Func("SwapInChar").Bind("𝜌", 2))
+  Hotstring(":*?B0COX:tau", Func("SwapInChar").Bind("𝜏", 2))
+  Hotstring(":*?B0COX:phi", Func("SwapInChar").Bind("𝜙", 2))
+  Hotstring(":*?B0COX:chi", Func("SwapInChar").Bind("𝜒", 2))
+  Hotstring(":*?B0COX:psi", Func("SwapInChar").Bind("𝜓", 2))
+  Hotstring(":*?B0COX:**", Func("SwapInChar").Bind("∗", 1))
+  Hotstring(":*?B0COX:xx", Func("SwapInChar").Bind("×", 1))
+  Hotstring(":*?B0COX:-:", Func("SwapInChar").Bind("÷", 1))
+  Hotstring(":*?B0COX:o+", Func("SwapInChar").Bind("⊕", 1))
+  Hotstring(":*?B0COX:ox", Func("SwapInChar").Bind("⊗", 1))
+  Hotstring(":*?B0COX:o.", Func("SwapInChar").Bind("⊙", 1))
+  Hotstring(":*?B0COX:^^", Func("SwapInChar").Bind("∧", 1))
+  Hotstring(":*?B0COX:vv", Func("SwapInChar").Bind("∨", 1))
+  Hotstring(":*?B0COX:nn", Func("SwapInChar").Bind("∩", 1))
+  Hotstring(":*?B0COX:uu", Func("SwapInChar").Bind("∪", 1))
+  Hotstring(":*?B0COX:+-", Func("SwapInChar").Bind("±", 1))
+  Hotstring(":*?B0COX:-+", Func("SwapInChar").Bind("∓", 1))
+  Hotstring(":*?B0COX:O/", Func("SwapInChar").Bind("∅", 1))
+  Hotstring(":*?B0COX:oo", Func("SwapInChar").Bind("∞", 1))
+  Hotstring(":*?B0COX::.", Func("SwapInChar").Bind("∴", 1))
+  Hotstring(":*?B0COX::'", Func("SwapInChar").Bind("∵", 1))
+  Hotstring(":*?B0COX:''", Func("SwapInChar").Bind("″", 1))
+  Hotstring(":*?B0COX:  ", Func("SwapInChar").Bind(" ", 1))
+  Hotstring(":*?B0COX:\ ", Func("SwapInChar").Bind("{Space}", 1))
+  Hotstring(":*?B0COX:/_", Func("SwapInChar").Bind("∠", 1))
+  Hotstring(":*?B0COX:CC", Func("SwapInChar").Bind("ℂ", 1))
+  Hotstring(":*?B0COX:NN", Func("SwapInChar").Bind("ℕ", 1))
+  Hotstring(":*?B0COX:QQ", Func("SwapInChar").Bind("ℚ", 1))
+  Hotstring(":*?B0COX:RR", Func("SwapInChar").Bind("ℝ", 1))
+  Hotstring(":*?B0COX:ZZ", Func("SwapInChar").Bind("ℤ", 1))
+  Hotstring(":*?B0COX:AA", Func("SwapInChar").Bind("∀", 1))
+  Hotstring(":*?B0COX:EE", Func("SwapInChar").Bind("∃", 1))
+  Hotstring(":*?B0COX::=", Func("SwapInChar").Bind("≔", 1))
+  Hotstring(":*?B0COX:!=", Func("SwapInChar").Bind("≠", 1))
+  Hotstring(":*?B0COX:?=", Func("SwapInChar").Bind("≟", 1))
+  Hotstring(":*?B0COX:-=", Func("SwapInChar").Bind("≡", 1))
+  Hotstring(":*?B0COX:~=", Func("SwapInChar").Bind("≅", 1))
+  Hotstring(":*?B0COX:~~", Func("SwapInChar").Bind("≈", 1))
+  Hotstring(":*?B0COX:<<", Func("SwapInChar").Bind("≪", 1))
+  Hotstring(":*?B0COX:>>", Func("SwapInChar").Bind("≫", 1))
+  Hotstring(":*?B0COX:<=", Func("SwapInChar").Bind("≤", 1))
+  Hotstring(":*?B0COX:>=", Func("SwapInChar").Bind("≥", 1))
+  Hotstring(":*?B0COX:-<", Func("SwapInChar").Bind("≺", 1))
+  Hotstring(":*?B0COX:>-", Func("SwapInChar").Bind("≻", 1))
+  Hotstring(":*?B0COX:in", Func("SwapInChar").Bind("∈", 1))
+  Hotstring(":*?B0COX:or", Func("SwapInChar").Bind("or", 1))
+  Hotstring(":*?B0COX:if", Func("SwapInChar").Bind("if", 1))
+  Hotstring(":*?B0COX:TT", Func("SwapInChar").Bind("⊤", 1))
+  Hotstring(":*?B0COX:|_", Func("SwapInChar").Bind("⌊", 1))
+  Hotstring(":*?B0COX:_|", Func("SwapInChar").Bind("⌋", 1))
+  Hotstring(":*?B0COX:|~", Func("SwapInChar").Bind("⌈", 1))
+  Hotstring(":*?B0COX:~|", Func("SwapInChar").Bind("⌉", 1))
+  Hotstring(":*?B0COX:(:", Func("SwapInChar").Bind("⟨", 1))
+  Hotstring(":*?B0COX::)", Func("SwapInChar").Bind("⟩", 1))
+  Hotstring(":*?B0COX:=>", Func("SwapInChar").Bind("⇒", 1))
+  Hotstring(":*?B0COX:->", Func("SwapInChar").Bind("→", 1))
+  Hotstring(":*?B0COX:<-", Func("SwapInChar").Bind("←", 1))
+  Hotstring(":*?B0COX:ln", Func("SwapInChar").Bind("ln", 1))
+  Hotstring(":*?B0COX:Xi", Func("SwapInChar").Bind("𝛯", 1))
+  Hotstring(":*?B0COX:Pi", Func("SwapInChar").Bind("𝛱", 1))
+  Hotstring(":*?B0COX:mu", Func("SwapInChar").Bind("𝜇", 1))
+  Hotstring(":*?B0COX:nu", Func("SwapInChar").Bind("𝜈", 1))
+  Hotstring(":*?B0COX:xi", Func("SwapInChar").Bind("𝜉", 1))
+  Hotstring(":*?B0COX:pi", Func("SwapInChar").Bind("𝜋", 1))
+  Hotstring(":*?B0COX:+", Func("SwapInChar").Bind("+", 0))
+  Hotstring(":*?B0COX:-", Func("SwapInChar").Bind("−", 0))
+  Hotstring(":*?B0COX:*", Func("SwapInChar").Bind("⋅", 0))
+  Hotstring(":*?B0COX:/", Func("SwapInChar").Bind("∕", 0))
+  Hotstring(":*?B0COX:\", Func("SwapInChar").Bind("∖", 0))
+  Hotstring(":*?B0COX::", Func("SwapInChar").Bind("∶", 0))
+  Hotstring(":*?B0COX:!", Func("SwapInChar").Bind("!", 0))
+  Hotstring(":*?B0COX:'", Func("SwapInChar").Bind("′", 0))
+  Hotstring(":*?B0COX: ", Func("SwapInChar").Bind(" ", 0))
+  Hotstring(":*?B0COX:@", Func("SwapInChar").Bind("∘", 0))
+  Hotstring(":*?B0COX:=", Func("SwapInChar").Bind("=", 0))
+  Hotstring(":*?B0COX:<", Func("SwapInChar").Bind("<", 0))
+  Hotstring(":*?B0COX:>", Func("SwapInChar").Bind(">", 0))
+  Hotstring(":*?B0COX:(", Func("SwapInChar").Bind("(", 0))
+  Hotstring(":*?B0COX:)", Func("SwapInChar").Bind(")", 0))
+  Hotstring(":*?B0COX:[", Func("SwapInChar").Bind("[", 0))
+  Hotstring(":*?B0COX:]", Func("SwapInChar").Bind("]", 0))
+  Hotstring(":*?B0COX:{", Func("SwapInChar").Bind("{", 0))
+  Hotstring(":*?B0COX:}", Func("SwapInChar").Bind("}", 0))
+  Hotstring(":*?B0COX:|", Func("SwapInChar").Bind("|", 0))
+  Hotstring(":*?B0COX:a", Func("SwapInChar").Bind("𝑎", 0))
+  Hotstring(":*?B0COX:b", Func("SwapInChar").Bind("𝑏", 0))
+  Hotstring(":*?B0COX:c", Func("SwapInChar").Bind("𝑐", 0))
+  Hotstring(":*?B0COX:d", Func("SwapInChar").Bind("𝑑", 0))
+  Hotstring(":*?B0COX:e", Func("SwapInChar").Bind("𝑒", 0))
+  Hotstring(":*?B0COX:f", Func("SwapInChar").Bind("𝑓", 0))
+  Hotstring(":*?B0COX:g", Func("SwapInChar").Bind("𝑔", 0))
+  Hotstring(":*?B0COX:h", Func("SwapInChar").Bind("ℎ", 0))
+  Hotstring(":*?B0COX:i", Func("SwapInChar").Bind("𝑖", 0))
+  Hotstring(":*?B0COX:j", Func("SwapInChar").Bind("𝑗", 0))
+  Hotstring(":*?B0COX:k", Func("SwapInChar").Bind("𝑘", 0))
+  Hotstring(":*?B0COX:l", Func("SwapInChar").Bind("𝑙", 0))
+  Hotstring(":*?B0COX:m", Func("SwapInChar").Bind("𝑚", 0))
+  Hotstring(":*?B0COX:n", Func("SwapInChar").Bind("𝑛", 0))
+  Hotstring(":*?B0COX:o", Func("SwapInChar").Bind("𝑜", 0))
+  Hotstring(":*?B0COX:p", Func("SwapInChar").Bind("𝑝", 0))
+  Hotstring(":*?B0COX:q", Func("SwapInChar").Bind("𝑞", 0))
+  Hotstring(":*?B0COX:r", Func("SwapInChar").Bind("𝑟", 0))
+  Hotstring(":*?B0COX:s", Func("SwapInChar").Bind("𝑠", 0))
+  Hotstring(":*?B0COX:t", Func("SwapInChar").Bind("𝑡", 0))
+  Hotstring(":*?B0COX:u", Func("SwapInChar").Bind("𝑢", 0))
+  Hotstring(":*?B0COX:v", Func("SwapInChar").Bind("𝑣", 0))
+  Hotstring(":*?B0COX:w", Func("SwapInChar").Bind("𝑤", 0))
+  Hotstring(":*?B0COX:x", Func("SwapInChar").Bind("𝑥", 0))
+  Hotstring(":*?B0COX:y", Func("SwapInChar").Bind("𝑦", 0))
+  Hotstring(":*?B0COX:z", Func("SwapInChar").Bind("𝑧", 0))
+  Hotstring(":*?B0COX:A", Func("SwapInChar").Bind("𝐴", 0))
+  Hotstring(":*?B0COX:B", Func("SwapInChar").Bind("𝐵", 0))
+  Hotstring(":*?B0COX:C", Func("SwapInChar").Bind("𝐶", 0))
+  Hotstring(":*?B0COX:D", Func("SwapInChar").Bind("𝐷", 0))
+  Hotstring(":*?B0COX:E", Func("SwapInChar").Bind("𝐸", 0))
+  Hotstring(":*?B0COX:F", Func("SwapInChar").Bind("𝐹", 0))
+  Hotstring(":*?B0COX:G", Func("SwapInChar").Bind("𝐺", 0))
+  Hotstring(":*?B0COX:H", Func("SwapInChar").Bind("𝐻", 0))
+  Hotstring(":*?B0COX:I", Func("SwapInChar").Bind("𝐼", 0))
+  Hotstring(":*?B0COX:J", Func("SwapInChar").Bind("𝐽", 0))
+  Hotstring(":*?B0COX:K", Func("SwapInChar").Bind("𝐾", 0))
+  Hotstring(":*?B0COX:L", Func("SwapInChar").Bind("𝐿", 0))
+  Hotstring(":*?B0COX:M", Func("SwapInChar").Bind("𝑀", 0))
+  Hotstring(":*?B0COX:N", Func("SwapInChar").Bind("𝑁", 0))
+  Hotstring(":*?B0COX:O", Func("SwapInChar").Bind("𝑂", 0))
+  Hotstring(":*?B0COX:P", Func("SwapInChar").Bind("𝑃", 0))
+  Hotstring(":*?B0COX:Q", Func("SwapInChar").Bind("𝑄", 0))
+  Hotstring(":*?B0COX:R", Func("SwapInChar").Bind("𝑅", 0))
+  Hotstring(":*?B0COX:S", Func("SwapInChar").Bind("𝑆", 0))
+  Hotstring(":*?B0COX:T", Func("SwapInChar").Bind("𝑇", 0))
+  Hotstring(":*?B0COX:U", Func("SwapInChar").Bind("𝑈", 0))
+  Hotstring(":*?B0COX:V", Func("SwapInChar").Bind("𝑉", 0))
+  Hotstring(":*?B0COX:W", Func("SwapInChar").Bind("𝑊", 0))
+  Hotstring(":*?B0COX:X", Func("SwapInChar").Bind("𝑋", 0))
+  Hotstring(":*?B0COX:Y", Func("SwapInChar").Bind("𝑌", 0))
+  Hotstring(":*?B0COX:Z", Func("SwapInChar").Bind("𝑍", 0))
+  Hotstring(":*?B0COX:0", Func("SwapInChar").Bind("0", 0))
+  Hotstring(":*?B0COX:1", Func("SwapInChar").Bind("1", 0))
+  Hotstring(":*?B0COX:2", Func("SwapInChar").Bind("2", 0))
+  Hotstring(":*?B0COX:3", Func("SwapInChar").Bind("3", 0))
+  Hotstring(":*?B0COX:4", Func("SwapInChar").Bind("4", 0))
+  Hotstring(":*?B0COX:5", Func("SwapInChar").Bind("5", 0))
+  Hotstring(":*?B0COX:6", Func("SwapInChar").Bind("6", 0))
+  Hotstring(":*?B0COX:7", Func("SwapInChar").Bind("7", 0))
+  Hotstring(":*?B0COX:8", Func("SwapInChar").Bind("8", 0))
+  Hotstring(":*?B0COX:9", Func("SwapInChar").Bind("9", 0))
+return
