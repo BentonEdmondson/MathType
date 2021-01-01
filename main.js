@@ -6,12 +6,11 @@ console.log(keywordSets.general);
 let ahkScript =
   `#SingleInstance force
 #NoEnv
-#Warn
 
 SendMode Input
 
-Suspend, On
 ^#!m::Suspend
+
 
 ~BS::
 ~Del::
@@ -21,23 +20,36 @@ Suspend, On
 ~PgDn::
 ~Left::
 ~Right::
-~Enter::
 ~LButton::
 ~RButton::
   Hotstring("Reset")
+  if (PendingConfirmation) {
+    Send, {del}
+  }
+
+Enter::
+  Hotstring("Reset")
+  if (PendingConfirmation) {
+    PendingConfirmation = 0
+    Send, {del}
+  }
+
+global PendingConfirmation := False
 
 SwapInChar(char, backspaceQty) {
   Send, {bs %backspaceQty%}
   SendRaw, %char%
+  if (backspaceQty > 0 and !PendingConfirmation) {
+    PendingConfirmation = True
+    Send, ⏎{left}
+  }
 }
 
 `;
 
 for (let keyword of keywordSets.general) {
-  ahkScript += `Hotstring(":*?B0COX`
-  if (keywordSets.general.every(candidateKeyword => !candidateKeyword.follows.slice(0, -1).includes(keyword.output)))
-    ahkScript += 'Z';
-  ahkScript += `:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
+  ahkScript += `Hotstring(":*?B0COX:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
 }
 
 fs.writeFileSync(`script.ahk`, '\uFEFF' + ahkScript);
+

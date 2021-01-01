@@ -12,3 +12,5 @@
   - I think the easiest way to test will just be to type the test case with NutJS, `Shift`+`Home`, `Ctrl`+`C` and see if the test cases match up
 - Check if e, pi should be italicized, roman, a certain Unicode char, etc.
 - Make a nice-looking README with a gif, etc.
+- When toggled on, `Hotstring("reset")` from the backspace or similar is required for an unknown reason
+- Spaces seem to act weirdly when the script is suspended, they are randomly deleted
