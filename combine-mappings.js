@@ -47,8 +47,10 @@ combinedMappings = [...combinedMappings, ...romanizationsObjects];
 
 combinedMappings.sort((a, b) => b.input.length - a.input.length);
 
-//keywords.forEach(keyword => keyword.type = 'keyword');
+keywords.fonts.forEach(fontKeyword => {
+  fontKeyword.type = 'keyword'
+});
 
-//combinedMappings = [...keywords, ...combinedMappings];
+combinedMappings = [...keywords.fonts, ...combinedMappings];
 
 module.exports = combinedMappings;

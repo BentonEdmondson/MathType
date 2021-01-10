@@ -4,30 +4,37 @@ Hotstring("EndChars", "`n`t")
 
 SendMode Input
 
-^#!m::Suspend
-
-~BS::
-~Del::
-~Home::
-~End::
-~PgUp::
-~PgDn::
-~Left::
-~Right::
-~LButton::
-~RButton::
-  Hotstring("Reset")
-
 TypeString(variations) {
   toSend := variations["standard"]
   SendRaw, %toSend%
 }
 
+global curFont := "italics"
+  
 TypeAlphanumeral(variations) {
-  toSend := variations["italics"]
+  toSend := variations[curFont]
   SendRaw, %toSend%
 }
 
+ChangeFont(newFont) {
+  if (newFont = "romanOrClosingQuote") {
+    if (curFont = "italics") {
+      curFont := "roman"
+    } else {
+      curFont := "italics"
+    }
+  } else {
+    curFont := newFont
+  }
+}
+
+Hotstring(":*?COX:bb""", Func("ChangeFont").Bind("bold"))
+Hotstring(":*?COX:bbb""", Func("ChangeFont").Bind("doubleStruck"))
+Hotstring(":*?COX:cc""", Func("ChangeFont").Bind("script"))
+Hotstring(":*?COX:tt""", Func("ChangeFont").Bind("monospace"))
+Hotstring(":*?COX:fr""", Func("ChangeFont").Bind("fraktur"))
+Hotstring(":*?COX:sf""", Func("ChangeFont").Bind("sansSerif"))
+Hotstring(":*?COX:""", Func("ChangeFont").Bind("romanOrClosingQuote"))
 Hotstring(":?COXZ:varepsilon", Func("TypeAlphanumeral").Bind({"italics":"𝜀","bold":"𝛆","roman":"ε"}))
 Hotstring(":?COXZ:vartheta", Func("TypeAlphanumeral").Bind({"italics":"𝜗","bold":"𝛝","roman":"ϑ"}))
 Hotstring(":?COXZ:root(3)", Func("TypeString").Bind({"standard":"∛"}))
@@ -229,85 +236,99 @@ Hotstring(":?COXZ:pi", Func("TypeAlphanumeral").Bind({"italics":"𝜋","bold":"�
 Hotstring(":*?COX:ln", Func("TypeString").Bind({"standard":"ln"}))
 Hotstring(":*?COX:if", Func("TypeString").Bind({"standard":"if"}))
 Hotstring(":*?COX:or", Func("TypeString").Bind({"standard":"or"}))
-Hotstring(":*?COX:+", Func("TypeString").Bind({"standard":"+","superscript":"⁺","subscript":"₊"}))
-Hotstring(":*?COX:-", Func("TypeString").Bind({"standard":"−","superscript":"⁻","subscript":"₋"}))
-Hotstring(":*?COX:*", Func("TypeString").Bind({"standard":"⋅"}))
-Hotstring(":*?COX:/", Func("TypeString").Bind({"standard":"∕"}))
-Hotstring(":*?COX:\", Func("TypeString").Bind({"standard":"∖"}))
-Hotstring(":*?COX::", Func("TypeString").Bind({"standard":"∶"}))
-Hotstring(":*?COX:!", Func("TypeString").Bind({"standard":"!"}))
-Hotstring(":*?COX:'", Func("TypeString").Bind({"standard":"′"}))
-Hotstring(":*?COX: ", Func("TypeString").Bind({"standard":" "}))
-Hotstring(":*?COX:(", Func("TypeString").Bind({"standard":"(","superscript":"⁽","subscript":"₍"}))
-Hotstring(":*?COX:)", Func("TypeString").Bind({"standard":")","superscript":"⁾","subscript":"₎"}))
-Hotstring(":*?COX:[", Func("TypeString").Bind({"standard":"["}))
-Hotstring(":*?COX:]", Func("TypeString").Bind({"standard":"]"}))
-Hotstring(":*?COX:{", Func("TypeString").Bind({"standard":"{"}))
-Hotstring(":*?COX:}", Func("TypeString").Bind({"standard":"}"}))
-Hotstring(":*?COX:|", Func("TypeString").Bind({"standard":"|"}))
-Hotstring(":*?COX:@", Func("TypeString").Bind({"standard":"∘"}))
-Hotstring(":*?COX:=", Func("TypeString").Bind({"standard":"=","superscript":"⁼","subscript":"₌"}))
-Hotstring(":*?COX:<", Func("TypeString").Bind({"standard":"<"}))
-Hotstring(":*?COX:>", Func("TypeString").Bind({"standard":">"}))
-Hotstring(":*?COX:0", Func("TypeAlphanumeral").Bind({"superscript":"⁰","subscript":"₀","italics":"0","bold":"𝟎","doubleStruck":"𝟘","monospace":"𝟶","sanSerif":"𝟢","roman":"0"}))
-Hotstring(":*?COX:1", Func("TypeAlphanumeral").Bind({"superscript":"¹","subscript":"₁","italics":"1","bold":"𝟏","doubleStruck":"𝟙","monospace":"𝟷","sanSerif":"𝟣","roman":"1"}))
-Hotstring(":*?COX:2", Func("TypeAlphanumeral").Bind({"superscript":"²","subscript":"₂","italics":"2","bold":"𝟐","doubleStruck":"𝟚","monospace":"𝟸","sanSerif":"𝟤","roman":"2"}))
-Hotstring(":*?COX:3", Func("TypeAlphanumeral").Bind({"superscript":"³","subscript":"₃","italics":"3","bold":"𝟑","doubleStruck":"𝟛","monospace":"𝟹","sanSerif":"𝟥","roman":"3"}))
-Hotstring(":*?COX:4", Func("TypeAlphanumeral").Bind({"superscript":"⁴","subscript":"₄","italics":"4","bold":"𝟒","doubleStruck":"𝟜","monospace":"𝟺","sanSerif":"𝟦","roman":"4"}))
-Hotstring(":*?COX:5", Func("TypeAlphanumeral").Bind({"superscript":"⁵","subscript":"₅","italics":"5","bold":"𝟓","doubleStruck":"𝟝","monospace":"𝟻","sanSerif":"𝟧","roman":"5"}))
-Hotstring(":*?COX:6", Func("TypeAlphanumeral").Bind({"superscript":"⁶","subscript":"₆","italics":"6","bold":"𝟔","doubleStruck":"𝟞","monospace":"𝟼","sanSerif":"𝟨","roman":"6"}))
-Hotstring(":*?COX:7", Func("TypeAlphanumeral").Bind({"superscript":"⁷","subscript":"₇","italics":"7","bold":"𝟕","doubleStruck":"𝟟","monospace":"𝟽","sanSerif":"𝟩","roman":"7"}))
-Hotstring(":*?COX:8", Func("TypeAlphanumeral").Bind({"superscript":"⁸","subscript":"₈","italics":"8","bold":"𝟖","doubleStruck":"𝟠","monospace":"𝟾","sanSerif":"𝟪","roman":"8"}))
-Hotstring(":*?COX:9", Func("TypeAlphanumeral").Bind({"superscript":"⁹","subscript":"₉","italics":"9","bold":"𝟗","doubleStruck":"𝟡","monospace":"𝟿","sanSerif":"𝟫","roman":"9"}))
-Hotstring(":*?COX:a", Func("TypeAlphanumeral").Bind({"superscript":"ᵃ","subscript":"ₐ","italics":"𝑎","bold":"𝗮","doubleStruck":"𝕒","script":"𝒶","monospace":"𝚊","fraktur":"𝔞","sanSerif":"𝖺","roman":"a"}))
-Hotstring(":*?COX:b", Func("TypeAlphanumeral").Bind({"superscript":"ᵇ","italics":"𝑏","bold":"𝗯","doubleStruck":"𝕓","script":"𝒷","monospace":"𝚋","fraktur":"𝔟","sanSerif":"𝖻","roman":"b"}))
-Hotstring(":*?COX:c", Func("TypeAlphanumeral").Bind({"superscript":"ᶜ","italics":"𝑐","bold":"𝗰","doubleStruck":"𝕔","script":"𝒸","monospace":"𝚌","fraktur":"𝔠","sanSerif":"𝖼","roman":"c"}))
-Hotstring(":*?COX:d", Func("TypeAlphanumeral").Bind({"superscript":"ᵈ","italics":"𝑑","bold":"𝗱","doubleStruck":"𝕕","script":"𝒹","monospace":"𝚍","fraktur":"𝔡","sanSerif":"𝖽","roman":"d"}))
-Hotstring(":*?COX:e", Func("TypeAlphanumeral").Bind({"superscript":"ᵉ","subscript":"ₑ","italics":"𝑒","bold":"𝗲","doubleStruck":"𝕖","script":"ℯ","monospace":"𝚎","fraktur":"𝔢","sanSerif":"𝖾","roman":"e"}))
-Hotstring(":*?COX:f", Func("TypeAlphanumeral").Bind({"superscript":"ᶠ","italics":"𝑓","bold":"𝗳","doubleStruck":"𝕗","script":"𝒻","monospace":"𝚏","fraktur":"𝔣","sanSerif":"𝖿","roman":"f"}))
-Hotstring(":*?COX:g", Func("TypeAlphanumeral").Bind({"superscript":"ᵍ","italics":"𝑔","bold":"𝗴","doubleStruck":"𝕘","script":"ℊ","monospace":"𝚐","fraktur":"𝔤","sanSerif":"𝗀","roman":"g"}))
-Hotstring(":*?COX:h", Func("TypeAlphanumeral").Bind({"superscript":"ʰ","subscript":"ₕ","italics":"ℎ","bold":"𝗵","doubleStruck":"𝕙","script":"𝒽","monospace":"𝚑","fraktur":"𝔥","sanSerif":"𝗁","roman":"h"}))
-Hotstring(":*?COX:i", Func("TypeAlphanumeral").Bind({"superscript":"ⁱ","subscript":"ᵢ","italics":"𝑖","bold":"𝗶","doubleStruck":"𝕚","script":"𝒾","monospace":"𝚒","fraktur":"𝔦","sanSerif":"𝗂","roman":"i"}))
-Hotstring(":*?COX:j", Func("TypeAlphanumeral").Bind({"superscript":"ʲ","subscript":"ⱼ","italics":"𝑗","bold":"𝗷","doubleStruck":"𝕛","script":"𝒿","monospace":"𝚓","fraktur":"𝔧","sanSerif":"𝗃","roman":"j"}))
-Hotstring(":*?COX:k", Func("TypeAlphanumeral").Bind({"superscript":"ᵏ","subscript":"ₖ","italics":"𝑘","bold":"𝗸","doubleStruck":"𝕜","script":"𝓀","monospace":"𝚔","fraktur":"𝔨","sanSerif":"𝗄","roman":"k"}))
-Hotstring(":*?COX:l", Func("TypeAlphanumeral").Bind({"superscript":"ˡ","subscript":"ₗ","italics":"𝑙","bold":"𝗹","doubleStruck":"𝕝","script":"𝓁","monospace":"𝚕","fraktur":"𝔩","sanSerif":"𝗅","roman":"l"}))
-Hotstring(":*?COX:m", Func("TypeAlphanumeral").Bind({"superscript":"ᵐ","subscript":"ₘ","italics":"𝑚","bold":"𝗺","doubleStruck":"𝕞","script":"𝓂","monospace":"𝚖","fraktur":"𝔪","sanSerif":"𝗆","roman":"m"}))
-Hotstring(":*?COX:n", Func("TypeAlphanumeral").Bind({"superscript":"ⁿ","subscript":"ₙ","italics":"𝑛","bold":"𝗻","doubleStruck":"𝕟","script":"𝓃","monospace":"𝚗","fraktur":"𝔫","sanSerif":"𝗇","roman":"n"}))
-Hotstring(":*?COX:o", Func("TypeAlphanumeral").Bind({"superscript":"ᵒ","subscript":"ₒ","italics":"𝑜","bold":"𝗼","doubleStruck":"𝕠","script":"ℴ","monospace":"𝚘","fraktur":"𝔬","sanSerif":"𝗈","roman":"o"}))
-Hotstring(":*?COX:p", Func("TypeAlphanumeral").Bind({"superscript":"ᵖ","subscript":"ₚ","italics":"𝑝","bold":"𝗽","doubleStruck":"𝕡","script":"𝓅","monospace":"𝚙","fraktur":"𝔭","sanSerif":"𝗉","roman":"p"}))
-Hotstring(":*?COX:q", Func("TypeAlphanumeral").Bind({"italics":"𝑞","bold":"𝗾","doubleStruck":"𝕢","script":"𝓆","monospace":"𝚚","fraktur":"𝔮","sanSerif":"𝗊","roman":"q"}))
-Hotstring(":*?COX:r", Func("TypeAlphanumeral").Bind({"superscript":"ʳ","subscript":"ᵣ","italics":"𝑟","bold":"𝗿","doubleStruck":"𝕣","script":"𝓇","monospace":"𝚛","fraktur":"𝔯","sanSerif":"𝗋","roman":"r"}))
-Hotstring(":*?COX:s", Func("TypeAlphanumeral").Bind({"superscript":"ˢ","subscript":"ₛ","italics":"𝑠","bold":"𝘀","doubleStruck":"𝕤","script":"𝓈","monospace":"𝚜","fraktur":"𝔰","sanSerif":"𝗌","roman":"s"}))
-Hotstring(":*?COX:t", Func("TypeAlphanumeral").Bind({"superscript":"ᵗ","subscript":"ₜ","italics":"𝑡","bold":"𝘁","doubleStruck":"𝕥","script":"𝓉","monospace":"𝚝","fraktur":"𝔱","sanSerif":"𝗍","roman":"t"}))
-Hotstring(":*?COX:u", Func("TypeAlphanumeral").Bind({"superscript":"ᵘ","subscript":"ᵤ","italics":"𝑢","bold":"𝘂","doubleStruck":"𝕦","script":"𝓊","monospace":"𝚞","fraktur":"𝔲","sanSerif":"𝗎","roman":"u"}))
-Hotstring(":*?COX:v", Func("TypeAlphanumeral").Bind({"superscript":"ᵛ","subscript":"ᵥ","italics":"𝑣","bold":"𝘃","doubleStruck":"𝕧","script":"𝓋","monospace":"𝚟","fraktur":"𝔳","sanSerif":"𝗏","roman":"v"}))
-Hotstring(":*?COX:w", Func("TypeAlphanumeral").Bind({"superscript":"ʷ","italics":"𝑤","bold":"𝘄","doubleStruck":"𝕨","script":"𝓌","monospace":"𝚠","fraktur":"𝔴","sanSerif":"𝗐","roman":"w"}))
-Hotstring(":*?COX:x", Func("TypeAlphanumeral").Bind({"superscript":"ˣ","subscript":"ₓ","italics":"𝑥","bold":"𝘅","doubleStruck":"𝕩","script":"𝓍","monospace":"𝚡","fraktur":"𝔵","sanSerif":"𝗑","roman":"x"}))
-Hotstring(":*?COX:y", Func("TypeAlphanumeral").Bind({"superscript":"ʸ","italics":"𝑦","bold":"𝘆","doubleStruck":"𝕪","script":"𝓎","monospace":"𝚢","fraktur":"𝔶","sanSerif":"𝗒","roman":"y"}))
-Hotstring(":*?COX:z", Func("TypeAlphanumeral").Bind({"superscript":"ᶻ","italics":"𝑧","bold":"𝘇","doubleStruck":"𝕫","script":"𝓏","monospace":"𝚣","fraktur":"𝔷","sanSerif":"𝗓","roman":"z"}))
-Hotstring(":*?COX:A", Func("TypeAlphanumeral").Bind({"superscript":"ᴬ","italics":"𝐴","bold":"𝗔","doubleStruck":"𝔸","script":"𝒜","monospace":"𝙰","fraktur":"𝔄","sanSerif":"𝖠","roman":"A"}))
-Hotstring(":*?COX:B", Func("TypeAlphanumeral").Bind({"superscript":"ᴮ","italics":"𝐵","bold":"𝗕","doubleStruck":"𝔹","script":"ℬ","monospace":"𝙱","fraktur":"𝔅","sanSerif":"𝖡","roman":"B"}))
-Hotstring(":*?COX:C", Func("TypeAlphanumeral").Bind({"italics":"𝐶","bold":"𝗖","doubleStruck":"ℂ","script":"𝒞","monospace":"𝙲","fraktur":"ℭ","sanSerif":"𝖢","roman":"C"}))
-Hotstring(":*?COX:D", Func("TypeAlphanumeral").Bind({"superscript":"ᴰ","italics":"𝐷","bold":"𝗗","doubleStruck":"𝔻","script":"𝒟","monospace":"𝙳","fraktur":"𝔇","sanSerif":"𝖣","roman":"D"}))
-Hotstring(":*?COX:E", Func("TypeAlphanumeral").Bind({"superscript":"ᴱ","italics":"𝐸","bold":"𝗘","doubleStruck":"𝔼","script":"ℰ","monospace":"𝙴","fraktur":"𝔈","sanSerif":"𝖤","roman":"E"}))
-Hotstring(":*?COX:F", Func("TypeAlphanumeral").Bind({"italics":"𝐹","bold":"𝗙","doubleStruck":"𝔽","script":"ℱ","monospace":"𝙵","fraktur":"𝔉","sanSerif":"𝖥","roman":"F"}))
-Hotstring(":*?COX:G", Func("TypeAlphanumeral").Bind({"superscript":"ᴳ","italics":"𝐺","bold":"𝗚","doubleStruck":"𝔾","script":"𝒢","monospace":"𝙶","fraktur":"𝔊","sanSerif":"𝖦","roman":"G"}))
-Hotstring(":*?COX:H", Func("TypeAlphanumeral").Bind({"superscript":"ᴴ","italics":"𝐻","bold":"𝗛","doubleStruck":"ℍ","script":"ℋ","monospace":"𝙷","fraktur":"ℌ","sanSerif":"𝖧","roman":"H"}))
-Hotstring(":*?COX:I", Func("TypeAlphanumeral").Bind({"superscript":"ᴵ","italics":"𝐼","bold":"𝗜","doubleStruck":"𝕀","script":"ℐ","monospace":"𝙸","fraktur":"ℑ","sanSerif":"𝖨","roman":"I"}))
-Hotstring(":*?COX:J", Func("TypeAlphanumeral").Bind({"superscript":"ᴶ","italics":"𝐽","bold":"𝗝","doubleStruck":"𝕁","script":"𝒥","monospace":"𝙹","fraktur":"𝔍","sanSerif":"𝖩","roman":"J"}))
-Hotstring(":*?COX:K", Func("TypeAlphanumeral").Bind({"superscript":"ᴷ","italics":"𝐾","bold":"𝗞","doubleStruck":"𝕂","script":"𝒦","monospace":"𝙺","fraktur":"𝔎","sanSerif":"𝖪","roman":"K"}))
-Hotstring(":*?COX:L", Func("TypeAlphanumeral").Bind({"superscript":"ᴸ","italics":"𝐿","bold":"𝗟","doubleStruck":"𝕃","script":"ℒ","monospace":"𝙻","fraktur":"𝔏","sanSerif":"𝖫","roman":"L"}))
-Hotstring(":*?COX:M", Func("TypeAlphanumeral").Bind({"superscript":"ᴹ","italics":"𝑀","bold":"𝗠","doubleStruck":"𝕄","script":"ℳ","monospace":"𝙼","fraktur":"𝔐","sanSerif":"𝖬","roman":"M"}))
-Hotstring(":*?COX:N", Func("TypeAlphanumeral").Bind({"superscript":"ᴺ","italics":"𝑁","bold":"𝗡","doubleStruck":"ℕ","script":"𝒩","monospace":"𝙽","fraktur":"𝔑","sanSerif":"𝖭","roman":"N"}))
-Hotstring(":*?COX:O", Func("TypeAlphanumeral").Bind({"superscript":"ᴼ","italics":"𝑂","bold":"𝗢","doubleStruck":"𝕆","script":"𝒪","monospace":"𝙾","fraktur":"𝔒","sanSerif":"𝖮","roman":"O"}))
-Hotstring(":*?COX:P", Func("TypeAlphanumeral").Bind({"superscript":"ᴾ","italics":"𝑃","bold":"𝗣","doubleStruck":"ℙ","script":"𝒫","monospace":"𝙿","fraktur":"𝔓","sanSerif":"𝖯","roman":"P"}))
-Hotstring(":*?COX:Q", Func("TypeAlphanumeral").Bind({"italics":"𝑄","bold":"𝗤","doubleStruck":"ℚ","script":"𝒬","monospace":"𝚀","fraktur":"𝔔","sanSerif":"𝖰","roman":"Q"}))
-Hotstring(":*?COX:R", Func("TypeAlphanumeral").Bind({"superscript":"ᴿ","italics":"𝑅","bold":"𝗥","doubleStruck":"ℝ","script":"ℛ","monospace":"𝚁","fraktur":"ℜ","sanSerif":"𝖱","roman":"R"}))
-Hotstring(":*?COX:S", Func("TypeAlphanumeral").Bind({"italics":"𝑆","bold":"𝗦","doubleStruck":"𝕊","script":"𝒮","monospace":"𝚂","fraktur":"𝔖","sanSerif":"𝖲","roman":"S"}))
-Hotstring(":*?COX:T", Func("TypeAlphanumeral").Bind({"superscript":"ᵀ","italics":"𝑇","bold":"𝗧","doubleStruck":"𝕋","script":"𝒯","monospace":"𝚃","fraktur":"𝔗","sanSerif":"𝖳","roman":"T"}))
-Hotstring(":*?COX:U", Func("TypeAlphanumeral").Bind({"superscript":"ᵁ","italics":"𝑈","bold":"𝗨","doubleStruck":"𝕌","script":"𝒰","monospace":"𝚄","fraktur":"𝔘","sanSerif":"𝖴","roman":"U"}))
-Hotstring(":*?COX:V", Func("TypeAlphanumeral").Bind({"superscript":"ⱽ","italics":"𝑉","bold":"𝗩","doubleStruck":"𝕍","script":"𝒱","monospace":"𝚅","fraktur":"𝔙","sanSerif":"𝖵","roman":"V"}))
-Hotstring(":*?COX:W", Func("TypeAlphanumeral").Bind({"superscript":"ᵂ","italics":"𝑊","bold":"𝗪","doubleStruck":"𝕎","script":"𝒲","monospace":"𝚆","fraktur":"𝔚","sanSerif":"𝖶","roman":"W"}))
-Hotstring(":*?COX:X", Func("TypeAlphanumeral").Bind({"italics":"𝑋","bold":"𝗫","doubleStruck":"𝕏","script":"𝒳","monospace":"𝚇","fraktur":"𝔛","sanSerif":"𝖷","roman":"X"}))
-Hotstring(":*?COX:Y", Func("TypeAlphanumeral").Bind({"italics":"𝑌","bold":"𝗬","doubleStruck":"𝕐","script":"𝒴","monospace":"𝚈","fraktur":"𝔜","sanSerif":"𝖸","roman":"Y"}))
-Hotstring(":*?COX:Z", Func("TypeAlphanumeral").Bind({"italics":"𝑍","bold":"𝗭","doubleStruck":"ℤ","script":"𝒵","monospace":"𝚉","fraktur":"ℨ","sanSerif":"𝖹","roman":"Z"}))
+Hotstring(":*?B0COX:+", Func("TypeString").Bind({"standard":"+","superscript":"⁺","subscript":"₊"}))
+Hotstring(":*?B0COX:-", Func("TypeString").Bind({"standard":"−","superscript":"⁻","subscript":"₋"}))
+Hotstring(":*?B0COX:*", Func("TypeString").Bind({"standard":"⋅"}))
+Hotstring(":*?B0COX:/", Func("TypeString").Bind({"standard":"∕"}))
+Hotstring(":*?B0COX:\", Func("TypeString").Bind({"standard":"∖"}))
+Hotstring(":*?B0COX::", Func("TypeString").Bind({"standard":"∶"}))
+Hotstring(":*?B0COX:!", Func("TypeString").Bind({"standard":"!"}))
+Hotstring(":*?B0COX:'", Func("TypeString").Bind({"standard":"′"}))
+Hotstring(":*?B0COX: ", Func("TypeString").Bind({"standard":" "}))
+Hotstring(":*?B0COX:(", Func("TypeString").Bind({"standard":"(","superscript":"⁽","subscript":"₍"}))
+Hotstring(":*?B0COX:)", Func("TypeString").Bind({"standard":")","superscript":"⁾","subscript":"₎"}))
+Hotstring(":*?B0COX:[", Func("TypeString").Bind({"standard":"["}))
+Hotstring(":*?B0COX:]", Func("TypeString").Bind({"standard":"]"}))
+Hotstring(":*?B0COX:{", Func("TypeString").Bind({"standard":"{"}))
+Hotstring(":*?B0COX:}", Func("TypeString").Bind({"standard":"}"}))
+Hotstring(":*?B0COX:|", Func("TypeString").Bind({"standard":"|"}))
+Hotstring(":*?B0COX:@", Func("TypeString").Bind({"standard":"∘"}))
+Hotstring(":*?B0COX:=", Func("TypeString").Bind({"standard":"=","superscript":"⁼","subscript":"₌"}))
+Hotstring(":*?B0COX:<", Func("TypeString").Bind({"standard":"<"}))
+Hotstring(":*?B0COX:>", Func("TypeString").Bind({"standard":">"}))
+Hotstring(":*?B0COX:0", Func("TypeAlphanumeral").Bind({"superscript":"⁰","subscript":"₀","italics":"0","bold":"𝟎","doubleStruck":"𝟘","monospace":"𝟶","sanSerif":"𝟢","roman":"0"}))
+Hotstring(":*?B0COX:1", Func("TypeAlphanumeral").Bind({"superscript":"¹","subscript":"₁","italics":"1","bold":"𝟏","doubleStruck":"𝟙","monospace":"𝟷","sanSerif":"𝟣","roman":"1"}))
+Hotstring(":*?B0COX:2", Func("TypeAlphanumeral").Bind({"superscript":"²","subscript":"₂","italics":"2","bold":"𝟐","doubleStruck":"𝟚","monospace":"𝟸","sanSerif":"𝟤","roman":"2"}))
+Hotstring(":*?B0COX:3", Func("TypeAlphanumeral").Bind({"superscript":"³","subscript":"₃","italics":"3","bold":"𝟑","doubleStruck":"𝟛","monospace":"𝟹","sanSerif":"𝟥","roman":"3"}))
+Hotstring(":*?B0COX:4", Func("TypeAlphanumeral").Bind({"superscript":"⁴","subscript":"₄","italics":"4","bold":"𝟒","doubleStruck":"𝟜","monospace":"𝟺","sanSerif":"𝟦","roman":"4"}))
+Hotstring(":*?B0COX:5", Func("TypeAlphanumeral").Bind({"superscript":"⁵","subscript":"₅","italics":"5","bold":"𝟓","doubleStruck":"𝟝","monospace":"𝟻","sanSerif":"𝟧","roman":"5"}))
+Hotstring(":*?B0COX:6", Func("TypeAlphanumeral").Bind({"superscript":"⁶","subscript":"₆","italics":"6","bold":"𝟔","doubleStruck":"𝟞","monospace":"𝟼","sanSerif":"𝟨","roman":"6"}))
+Hotstring(":*?B0COX:7", Func("TypeAlphanumeral").Bind({"superscript":"⁷","subscript":"₇","italics":"7","bold":"𝟕","doubleStruck":"𝟟","monospace":"𝟽","sanSerif":"𝟩","roman":"7"}))
+Hotstring(":*?B0COX:8", Func("TypeAlphanumeral").Bind({"superscript":"⁸","subscript":"₈","italics":"8","bold":"𝟖","doubleStruck":"𝟠","monospace":"𝟾","sanSerif":"𝟪","roman":"8"}))
+Hotstring(":*?B0COX:9", Func("TypeAlphanumeral").Bind({"superscript":"⁹","subscript":"₉","italics":"9","bold":"𝟗","doubleStruck":"𝟡","monospace":"𝟿","sanSerif":"𝟫","roman":"9"}))
+Hotstring(":*?B0COX:a", Func("TypeAlphanumeral").Bind({"superscript":"ᵃ","subscript":"ₐ","italics":"𝑎","bold":"𝗮","doubleStruck":"𝕒","script":"𝒶","monospace":"𝚊","fraktur":"𝔞","sanSerif":"𝖺","roman":"a"}))
+Hotstring(":*?B0COX:b", Func("TypeAlphanumeral").Bind({"superscript":"ᵇ","italics":"𝑏","bold":"𝗯","doubleStruck":"𝕓","script":"𝒷","monospace":"𝚋","fraktur":"𝔟","sanSerif":"𝖻","roman":"b"}))
+Hotstring(":*?B0COX:c", Func("TypeAlphanumeral").Bind({"superscript":"ᶜ","italics":"𝑐","bold":"𝗰","doubleStruck":"𝕔","script":"𝒸","monospace":"𝚌","fraktur":"𝔠","sanSerif":"𝖼","roman":"c"}))
+Hotstring(":*?B0COX:d", Func("TypeAlphanumeral").Bind({"superscript":"ᵈ","italics":"𝑑","bold":"𝗱","doubleStruck":"𝕕","script":"𝒹","monospace":"𝚍","fraktur":"𝔡","sanSerif":"𝖽","roman":"d"}))
+Hotstring(":*?B0COX:e", Func("TypeAlphanumeral").Bind({"superscript":"ᵉ","subscript":"ₑ","italics":"𝑒","bold":"𝗲","doubleStruck":"𝕖","script":"ℯ","monospace":"𝚎","fraktur":"𝔢","sanSerif":"𝖾","roman":"e"}))
+Hotstring(":*?B0COX:f", Func("TypeAlphanumeral").Bind({"superscript":"ᶠ","italics":"𝑓","bold":"𝗳","doubleStruck":"𝕗","script":"𝒻","monospace":"𝚏","fraktur":"𝔣","sanSerif":"𝖿","roman":"f"}))
+Hotstring(":*?B0COX:g", Func("TypeAlphanumeral").Bind({"superscript":"ᵍ","italics":"𝑔","bold":"𝗴","doubleStruck":"𝕘","script":"ℊ","monospace":"𝚐","fraktur":"𝔤","sanSerif":"𝗀","roman":"g"}))
+Hotstring(":*?B0COX:h", Func("TypeAlphanumeral").Bind({"superscript":"ʰ","subscript":"ₕ","italics":"ℎ","bold":"𝗵","doubleStruck":"𝕙","script":"𝒽","monospace":"𝚑","fraktur":"𝔥","sanSerif":"𝗁","roman":"h"}))
+Hotstring(":*?B0COX:i", Func("TypeAlphanumeral").Bind({"superscript":"ⁱ","subscript":"ᵢ","italics":"𝑖","bold":"𝗶","doubleStruck":"𝕚","script":"𝒾","monospace":"𝚒","fraktur":"𝔦","sanSerif":"𝗂","roman":"i"}))
+Hotstring(":*?B0COX:j", Func("TypeAlphanumeral").Bind({"superscript":"ʲ","subscript":"ⱼ","italics":"𝑗","bold":"𝗷","doubleStruck":"𝕛","script":"𝒿","monospace":"𝚓","fraktur":"𝔧","sanSerif":"𝗃","roman":"j"}))
+Hotstring(":*?B0COX:k", Func("TypeAlphanumeral").Bind({"superscript":"ᵏ","subscript":"ₖ","italics":"𝑘","bold":"𝗸","doubleStruck":"𝕜","script":"𝓀","monospace":"𝚔","fraktur":"𝔨","sanSerif":"𝗄","roman":"k"}))
+Hotstring(":*?B0COX:l", Func("TypeAlphanumeral").Bind({"superscript":"ˡ","subscript":"ₗ","italics":"𝑙","bold":"𝗹","doubleStruck":"𝕝","script":"𝓁","monospace":"𝚕","fraktur":"𝔩","sanSerif":"𝗅","roman":"l"}))
+Hotstring(":*?B0COX:m", Func("TypeAlphanumeral").Bind({"superscript":"ᵐ","subscript":"ₘ","italics":"𝑚","bold":"𝗺","doubleStruck":"𝕞","script":"𝓂","monospace":"𝚖","fraktur":"𝔪","sanSerif":"𝗆","roman":"m"}))
+Hotstring(":*?B0COX:n", Func("TypeAlphanumeral").Bind({"superscript":"ⁿ","subscript":"ₙ","italics":"𝑛","bold":"𝗻","doubleStruck":"𝕟","script":"𝓃","monospace":"𝚗","fraktur":"𝔫","sanSerif":"𝗇","roman":"n"}))
+Hotstring(":*?B0COX:o", Func("TypeAlphanumeral").Bind({"superscript":"ᵒ","subscript":"ₒ","italics":"𝑜","bold":"𝗼","doubleStruck":"𝕠","script":"ℴ","monospace":"𝚘","fraktur":"𝔬","sanSerif":"𝗈","roman":"o"}))
+Hotstring(":*?B0COX:p", Func("TypeAlphanumeral").Bind({"superscript":"ᵖ","subscript":"ₚ","italics":"𝑝","bold":"𝗽","doubleStruck":"𝕡","script":"𝓅","monospace":"𝚙","fraktur":"𝔭","sanSerif":"𝗉","roman":"p"}))
+Hotstring(":*?B0COX:q", Func("TypeAlphanumeral").Bind({"italics":"𝑞","bold":"𝗾","doubleStruck":"𝕢","script":"𝓆","monospace":"𝚚","fraktur":"𝔮","sanSerif":"𝗊","roman":"q"}))
+Hotstring(":*?B0COX:r", Func("TypeAlphanumeral").Bind({"superscript":"ʳ","subscript":"ᵣ","italics":"𝑟","bold":"𝗿","doubleStruck":"𝕣","script":"𝓇","monospace":"𝚛","fraktur":"𝔯","sanSerif":"𝗋","roman":"r"}))
+Hotstring(":*?B0COX:s", Func("TypeAlphanumeral").Bind({"superscript":"ˢ","subscript":"ₛ","italics":"𝑠","bold":"𝘀","doubleStruck":"𝕤","script":"𝓈","monospace":"𝚜","fraktur":"𝔰","sanSerif":"𝗌","roman":"s"}))
+Hotstring(":*?B0COX:t", Func("TypeAlphanumeral").Bind({"superscript":"ᵗ","subscript":"ₜ","italics":"𝑡","bold":"𝘁","doubleStruck":"𝕥","script":"𝓉","monospace":"𝚝","fraktur":"𝔱","sanSerif":"𝗍","roman":"t"}))
+Hotstring(":*?B0COX:u", Func("TypeAlphanumeral").Bind({"superscript":"ᵘ","subscript":"ᵤ","italics":"𝑢","bold":"𝘂","doubleStruck":"𝕦","script":"𝓊","monospace":"𝚞","fraktur":"𝔲","sanSerif":"𝗎","roman":"u"}))
+Hotstring(":*?B0COX:v", Func("TypeAlphanumeral").Bind({"superscript":"ᵛ","subscript":"ᵥ","italics":"𝑣","bold":"𝘃","doubleStruck":"𝕧","script":"𝓋","monospace":"𝚟","fraktur":"𝔳","sanSerif":"𝗏","roman":"v"}))
+Hotstring(":*?B0COX:w", Func("TypeAlphanumeral").Bind({"superscript":"ʷ","italics":"𝑤","bold":"𝘄","doubleStruck":"𝕨","script":"𝓌","monospace":"𝚠","fraktur":"𝔴","sanSerif":"𝗐","roman":"w"}))
+Hotstring(":*?B0COX:x", Func("TypeAlphanumeral").Bind({"superscript":"ˣ","subscript":"ₓ","italics":"𝑥","bold":"𝘅","doubleStruck":"𝕩","script":"𝓍","monospace":"𝚡","fraktur":"𝔵","sanSerif":"𝗑","roman":"x"}))
+Hotstring(":*?B0COX:y", Func("TypeAlphanumeral").Bind({"superscript":"ʸ","italics":"𝑦","bold":"𝘆","doubleStruck":"𝕪","script":"𝓎","monospace":"𝚢","fraktur":"𝔶","sanSerif":"𝗒","roman":"y"}))
+Hotstring(":*?B0COX:z", Func("TypeAlphanumeral").Bind({"superscript":"ᶻ","italics":"𝑧","bold":"𝘇","doubleStruck":"𝕫","script":"𝓏","monospace":"𝚣","fraktur":"𝔷","sanSerif":"𝗓","roman":"z"}))
+Hotstring(":*?B0COX:A", Func("TypeAlphanumeral").Bind({"superscript":"ᴬ","italics":"𝐴","bold":"𝗔","doubleStruck":"𝔸","script":"𝒜","monospace":"𝙰","fraktur":"𝔄","sanSerif":"𝖠","roman":"A"}))
+Hotstring(":*?B0COX:B", Func("TypeAlphanumeral").Bind({"superscript":"ᴮ","italics":"𝐵","bold":"𝗕","doubleStruck":"𝔹","script":"ℬ","monospace":"𝙱","fraktur":"𝔅","sanSerif":"𝖡","roman":"B"}))
+Hotstring(":*?B0COX:C", Func("TypeAlphanumeral").Bind({"italics":"𝐶","bold":"𝗖","doubleStruck":"ℂ","script":"𝒞","monospace":"𝙲","fraktur":"ℭ","sanSerif":"𝖢","roman":"C"}))
+Hotstring(":*?B0COX:D", Func("TypeAlphanumeral").Bind({"superscript":"ᴰ","italics":"𝐷","bold":"𝗗","doubleStruck":"𝔻","script":"𝒟","monospace":"𝙳","fraktur":"𝔇","sanSerif":"𝖣","roman":"D"}))
+Hotstring(":*?B0COX:E", Func("TypeAlphanumeral").Bind({"superscript":"ᴱ","italics":"𝐸","bold":"𝗘","doubleStruck":"𝔼","script":"ℰ","monospace":"𝙴","fraktur":"𝔈","sanSerif":"𝖤","roman":"E"}))
+Hotstring(":*?B0COX:F", Func("TypeAlphanumeral").Bind({"italics":"𝐹","bold":"𝗙","doubleStruck":"𝔽","script":"ℱ","monospace":"𝙵","fraktur":"𝔉","sanSerif":"𝖥","roman":"F"}))
+Hotstring(":*?B0COX:G", Func("TypeAlphanumeral").Bind({"superscript":"ᴳ","italics":"𝐺","bold":"𝗚","doubleStruck":"𝔾","script":"𝒢","monospace":"𝙶","fraktur":"𝔊","sanSerif":"𝖦","roman":"G"}))
+Hotstring(":*?B0COX:H", Func("TypeAlphanumeral").Bind({"superscript":"ᴴ","italics":"𝐻","bold":"𝗛","doubleStruck":"ℍ","script":"ℋ","monospace":"𝙷","fraktur":"ℌ","sanSerif":"𝖧","roman":"H"}))
+Hotstring(":*?B0COX:I", Func("TypeAlphanumeral").Bind({"superscript":"ᴵ","italics":"𝐼","bold":"𝗜","doubleStruck":"𝕀","script":"ℐ","monospace":"𝙸","fraktur":"ℑ","sanSerif":"𝖨","roman":"I"}))
+Hotstring(":*?B0COX:J", Func("TypeAlphanumeral").Bind({"superscript":"ᴶ","italics":"𝐽","bold":"𝗝","doubleStruck":"𝕁","script":"𝒥","monospace":"𝙹","fraktur":"𝔍","sanSerif":"𝖩","roman":"J"}))
+Hotstring(":*?B0COX:K", Func("TypeAlphanumeral").Bind({"superscript":"ᴷ","italics":"𝐾","bold":"𝗞","doubleStruck":"𝕂","script":"𝒦","monospace":"𝙺","fraktur":"𝔎","sanSerif":"𝖪","roman":"K"}))
+Hotstring(":*?B0COX:L", Func("TypeAlphanumeral").Bind({"superscript":"ᴸ","italics":"𝐿","bold":"𝗟","doubleStruck":"𝕃","script":"ℒ","monospace":"𝙻","fraktur":"𝔏","sanSerif":"𝖫","roman":"L"}))
+Hotstring(":*?B0COX:M", Func("TypeAlphanumeral").Bind({"superscript":"ᴹ","italics":"𝑀","bold":"𝗠","doubleStruck":"𝕄","script":"ℳ","monospace":"𝙼","fraktur":"𝔐","sanSerif":"𝖬","roman":"M"}))
+Hotstring(":*?B0COX:N", Func("TypeAlphanumeral").Bind({"superscript":"ᴺ","italics":"𝑁","bold":"𝗡","doubleStruck":"ℕ","script":"𝒩","monospace":"𝙽","fraktur":"𝔑","sanSerif":"𝖭","roman":"N"}))
+Hotstring(":*?B0COX:O", Func("TypeAlphanumeral").Bind({"superscript":"ᴼ","italics":"𝑂","bold":"𝗢","doubleStruck":"𝕆","script":"𝒪","monospace":"𝙾","fraktur":"𝔒","sanSerif":"𝖮","roman":"O"}))
+Hotstring(":*?B0COX:P", Func("TypeAlphanumeral").Bind({"superscript":"ᴾ","italics":"𝑃","bold":"𝗣","doubleStruck":"ℙ","script":"𝒫","monospace":"𝙿","fraktur":"𝔓","sanSerif":"𝖯","roman":"P"}))
+Hotstring(":*?B0COX:Q", Func("TypeAlphanumeral").Bind({"italics":"𝑄","bold":"𝗤","doubleStruck":"ℚ","script":"𝒬","monospace":"𝚀","fraktur":"𝔔","sanSerif":"𝖰","roman":"Q"}))
+Hotstring(":*?B0COX:R", Func("TypeAlphanumeral").Bind({"superscript":"ᴿ","italics":"𝑅","bold":"𝗥","doubleStruck":"ℝ","script":"ℛ","monospace":"𝚁","fraktur":"ℜ","sanSerif":"𝖱","roman":"R"}))
+Hotstring(":*?B0COX:S", Func("TypeAlphanumeral").Bind({"italics":"𝑆","bold":"𝗦","doubleStruck":"𝕊","script":"𝒮","monospace":"𝚂","fraktur":"𝔖","sanSerif":"𝖲","roman":"S"}))
+Hotstring(":*?B0COX:T", Func("TypeAlphanumeral").Bind({"superscript":"ᵀ","italics":"𝑇","bold":"𝗧","doubleStruck":"𝕋","script":"𝒯","monospace":"𝚃","fraktur":"𝔗","sanSerif":"𝖳","roman":"T"}))
+Hotstring(":*?B0COX:U", Func("TypeAlphanumeral").Bind({"superscript":"ᵁ","italics":"𝑈","bold":"𝗨","doubleStruck":"𝕌","script":"𝒰","monospace":"𝚄","fraktur":"𝔘","sanSerif":"𝖴","roman":"U"}))
+Hotstring(":*?B0COX:V", Func("TypeAlphanumeral").Bind({"superscript":"ⱽ","italics":"𝑉","bold":"𝗩","doubleStruck":"𝕍","script":"𝒱","monospace":"𝚅","fraktur":"𝔙","sanSerif":"𝖵","roman":"V"}))
+Hotstring(":*?B0COX:W", Func("TypeAlphanumeral").Bind({"superscript":"ᵂ","italics":"𝑊","bold":"𝗪","doubleStruck":"𝕎","script":"𝒲","monospace":"𝚆","fraktur":"𝔚","sanSerif":"𝖶","roman":"W"}))
+Hotstring(":*?B0COX:X", Func("TypeAlphanumeral").Bind({"italics":"𝑋","bold":"𝗫","doubleStruck":"𝕏","script":"𝒳","monospace":"𝚇","fraktur":"𝔛","sanSerif":"𝖷","roman":"X"}))
+Hotstring(":*?B0COX:Y", Func("TypeAlphanumeral").Bind({"italics":"𝑌","bold":"𝗬","doubleStruck":"𝕐","script":"𝒴","monospace":"𝚈","fraktur":"𝔜","sanSerif":"𝖸","roman":"Y"}))
+Hotstring(":*?B0COX:Z", Func("TypeAlphanumeral").Bind({"italics":"𝑍","bold":"𝗭","doubleStruck":"ℤ","script":"𝒵","monospace":"𝚉","fraktur":"ℨ","sanSerif":"𝖹","roman":"Z"}))
+^#!m::Suspend
+
+~BS::
+~Del::
+~Home::
+~End::
+~PgUp::
+~PgDn::
+~Left::
+~Right::
+~LButton::
+~RButton::
+Hotstring("Reset")
+Return
