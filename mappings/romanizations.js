@@ -21,5 +21,6 @@ module.exports = [
   'lim',
   'and',
   'if',
-  'or'
+  'or',
+  'choose',
 ];

@@ -5,6 +5,7 @@ module.exports = [
   { input: '**', output: '∗' },
   { input: '***', output: '⋆' },
   { input: '/', output: '∕' },
+  { input: '//', output: '⁄' },
   { input: '\\', output: '∖' },
   { input: 'xx', output: '×' },
   { input: '-:', output: '÷' },
@@ -112,6 +113,7 @@ module.exports = [
   { input: '-=', output: '≡' },
   { input: '~=', output: '≅' },
   { input: '~~', output: '≈' },
+  { input: '~', output: '∼' },
   { input: 'prop', output: '∝' },
 
   { input: '<', output: '<' },
@@ -180,4 +182,5 @@ module.exports = [
   { input: 'dot', output: '\u0307' },
   { input: 'ddot', output: '\u0308' },
   { input: 'cancel', output: '\u0338' },
+  { input: 'tilde', output: '\u0303' },
 ];
