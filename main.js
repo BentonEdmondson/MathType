@@ -1,16 +1,14 @@
-var { keywordSets } = require('./initialization/init');
 var fs = require('fs');
-
-console.log(keywordSets.general);
+var mappings = require('./combine-mappings');
 
 let ahkScript =
   `#SingleInstance force
 #NoEnv
+Hotstring("EndChars", "\`n\`t")
 
 SendMode Input
 
 ^#!m::Suspend
-
 
 ~BS::
 ~Del::
@@ -23,33 +21,29 @@ SendMode Input
 ~LButton::
 ~RButton::
   Hotstring("Reset")
-  if (PendingConfirmation) {
-    Send, {del}
-  }
 
-Enter::
-  Hotstring("Reset")
-  if (PendingConfirmation) {
-    PendingConfirmation = 0
-    Send, {del}
-  }
+TypeString(variations) {
+  toSend := variations["standard"]
+  SendRaw, %toSend%
+}
 
-global PendingConfirmation := False
-
-SwapInChar(char, backspaceQty) {
-  Send, {bs %backspaceQty%}
-  SendRaw, %char%
-  if (backspaceQty > 0 and !PendingConfirmation) {
-    PendingConfirmation = True
-    Send, ⏎{left}
-  }
+TypeAlphanumeral(variations) {
+  toSend := variations["italics"]
+  SendRaw, %toSend%
 }
 
 `;
 
-for (let keyword of keywordSets.general) {
-  ahkScript += `Hotstring(":*?B0COX:${keyword.input}", Func("SwapInChar").Bind("${keyword.output}", ${[...keyword.follows].length - 1}))\n`;
+console.log(mappings);
+for (let mapping of mappings) {
+  if (mapping.input.length === 1) ahkScript += `Hotstring(":*?B0COX:${mapping.input}",`;
+  else if (mapping.type === 'romanization') ahkScript += `Hotstring(":*?COX:${mapping.input}",`;
+  else ahkScript += `Hotstring(":?COXZ:${mapping.input}",`;
+
+  if (mapping.type === 'alphanumeral') ahkScript += ` Func("TypeAlphanumeral").Bind(`;
+  else ahkScript += ` Func("TypeString").Bind(`;
+
+  ahkScript += `${JSON.stringify(mapping.output)}))\n`;
 }
 
 fs.writeFileSync(`script.ahk`, '\uFEFF' + ahkScript);
-
