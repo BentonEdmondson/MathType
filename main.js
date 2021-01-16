@@ -80,5 +80,5 @@ Hotstring("Reset")
 Return
 `;
 
-fs.writeFileSync(`script.ahk`, '\uFEFF' + ahkScript);
+fs.writeFileSync('script.ahk', '\uFEFF' + ahkScript);
 exec('start script.ahk');

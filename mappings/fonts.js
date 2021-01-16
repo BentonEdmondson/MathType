@@ -438,7 +438,7 @@ module.exports = {
     'Y': '𝔜',
     'Z': 'ℨ',
   },
-  sanSerif: {
+  sansSerif: {
     'a': '𝖺',
     'b': '𝖻',
     'c': '𝖼',
