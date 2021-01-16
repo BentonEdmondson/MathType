@@ -4,39 +4,28 @@ Hotstring("EndChars", "`n`t")
 
 SendMode Input
 
-TypeString(variations, numBackspaces) {
-  Send, {bs %numBackspaces%}
-  toSend := variations["standard"]
-  SendRaw, %toSend%
-}
-
 global curFont := "italics"
+global curElevation := "standard"
   
 TypeAlphanumeral(variations, numBackspaces) {
+  simplifiedVariations := {"standard": variations[curFont], "superscript": variations["superscript"], "subscript": variations["subscript"]}
+  TypeString(simplifiedVariations, numBackspaces)
+}
+
+TypeString(variations, numBackspaces) {
   Send, {bs %numBackspaces%}
-  toSend := variations[curFont]
+  toSend := variations[curElevation]
   SendRaw, %toSend%
 }
 
 ChangeFont(newFont) {
-  if (newFont = "romanOrClosingQuote") {
-    if (curFont = "italics") {
-      curFont := "roman"
-    } else {
-      curFont := "italics"
-    }
-  } else {
-    curFont := newFont
-  }
+  curFont := newFont
 }
 
-Hotstring(":*?COXZ:bb""", Func("ChangeFont").Bind("bold"))
-Hotstring(":*?COXZ:bbb""", Func("ChangeFont").Bind("doubleStruck"))
-Hotstring(":*?COXZ:cc""", Func("ChangeFont").Bind("script"))
-Hotstring(":*?COXZ:tt""", Func("ChangeFont").Bind("monospace"))
-Hotstring(":*?COXZ:fr""", Func("ChangeFont").Bind("fraktur"))
-Hotstring(":*?COXZ:sf""", Func("ChangeFont").Bind("sansSerif"))
-Hotstring(":*?COXZ:""", Func("ChangeFont").Bind("romanOrClosingQuote"))
+ChangeElevation(newElevation) {
+  curElevation := newElevation
+}
+
 Hotstring(":?B0COXZ:varepsilon", Func("TypeAlphanumeral").Bind({"italics":"𝜀","bold":"𝛆","roman":"ε"}, 10))
 Hotstring(":?B0COXZ:vartheta", Func("TypeAlphanumeral").Bind({"italics":"𝜗","bold":"𝛝","roman":"ϑ"}, 8))
 Hotstring(":?B0COXZ:root(3)", Func("TypeString").Bind({"standard":"∛"}, 7))
@@ -46,7 +35,6 @@ Hotstring(":?B0COXZ:epsilon", Func("TypeAlphanumeral").Bind({"italics":"𝜖","b
 Hotstring(":?B0COXZ:upsilon", Func("TypeAlphanumeral").Bind({"italics":"𝜐","bold":"𝛖","roman":"υ"}, 7))
 Hotstring(":?B0COXZ:iiiint", Func("TypeString").Bind({"standard":"⨌"}, 6))
 Hotstring(":?B0COXZ:oiiint", Func("TypeString").Bind({"standard":"∰"}, 6))
-Hotstring(":?B0COXZ:(1/10)", Func("TypeString").Bind({"standard":"⅒"}, 6))
 Hotstring(":?B0COXZ:square", Func("TypeString").Bind({"standard":"□"}, 6))
 Hotstring(":?B0COXZ:Delta=", Func("TypeString").Bind({"standard":"≜"}, 6))
 Hotstring(":?B0COXZ:cancel", Func("TypeString").Bind({"standard":"̸"}, 6))
@@ -57,28 +45,13 @@ Hotstring(":*?B0COX:arcsin", Func("TypeString").Bind({"standard":"arcsin"}, 5))
 Hotstring(":*?B0COX:arccos", Func("TypeString").Bind({"standard":"arccos"}, 5))
 Hotstring(":*?B0COX:arctan", Func("TypeString").Bind({"standard":"arctan"}, 5))
 Hotstring(":*?B0COX:choose", Func("TypeString").Bind({"standard":"choose"}, 5))
+Hotstring(":?COXZ:double", Func("ChangeFont").Bind("doubleStruck"))
+Hotstring(":?COXZ:script", Func("ChangeFont").Bind("script"))
 Hotstring(":?B0COXZ:iiint", Func("TypeString").Bind({"standard":"∭"}, 5))
 Hotstring(":?B0COXZ:oiint", Func("TypeString").Bind({"standard":"∯"}, 5))
 Hotstring(":?B0COXZ:cdots", Func("TypeString").Bind({"standard":"⋯"}, 5))
 Hotstring(":?B0COXZ:vdots", Func("TypeString").Bind({"standard":"⋮"}, 5))
 Hotstring(":?B0COXZ:ddots", Func("TypeString").Bind({"standard":"⋱"}, 5))
-Hotstring(":?B0COXZ:(1/4)", Func("TypeString").Bind({"standard":"¼"}, 5))
-Hotstring(":?B0COXZ:(1/2)", Func("TypeString").Bind({"standard":"½"}, 5))
-Hotstring(":?B0COXZ:(3/4)", Func("TypeString").Bind({"standard":"¾"}, 5))
-Hotstring(":?B0COXZ:(1/7)", Func("TypeString").Bind({"standard":"⅐"}, 5))
-Hotstring(":?B0COXZ:(1/9)", Func("TypeString").Bind({"standard":"⅑"}, 5))
-Hotstring(":?B0COXZ:(1/3)", Func("TypeString").Bind({"standard":"⅓"}, 5))
-Hotstring(":?B0COXZ:(2/3)", Func("TypeString").Bind({"standard":"⅔"}, 5))
-Hotstring(":?B0COXZ:(1/5)", Func("TypeString").Bind({"standard":"⅕"}, 5))
-Hotstring(":?B0COXZ:(2/5)", Func("TypeString").Bind({"standard":"⅖"}, 5))
-Hotstring(":?B0COXZ:(3/5)", Func("TypeString").Bind({"standard":"⅗"}, 5))
-Hotstring(":?B0COXZ:(4/5)", Func("TypeString").Bind({"standard":"⅘"}, 5))
-Hotstring(":?B0COXZ:(1/6)", Func("TypeString").Bind({"standard":"⅙"}, 5))
-Hotstring(":?B0COXZ:(5/6)", Func("TypeString").Bind({"standard":"⅚"}, 5))
-Hotstring(":?B0COXZ:(1/8)", Func("TypeString").Bind({"standard":"⅛"}, 5))
-Hotstring(":?B0COXZ:(3/8)", Func("TypeString").Bind({"standard":"⅜"}, 5))
-Hotstring(":?B0COXZ:(5/8)", Func("TypeString").Bind({"standard":"⅝"}, 5))
-Hotstring(":?B0COXZ:(7/8)", Func("TypeString").Bind({"standard":"⅞"}, 5))
 Hotstring(":?B0COXZ:frown", Func("TypeString").Bind({"standard":"⌢"}, 5))
 Hotstring(":?B0COXZ:aleph", Func("TypeString").Bind({"standard":"ℵ"}, 5))
 Hotstring(":?B0COXZ:tilde", Func("TypeString").Bind({"standard":"̃"}, 5))
@@ -101,6 +74,7 @@ Hotstring(":?B0COXZ:iint", Func("TypeString").Bind({"standard":"∬"}, 4))
 Hotstring(":?B0COXZ:oint", Func("TypeString").Bind({"standard":"∮"}, 4))
 Hotstring(":?B0COXZ:''''", Func("TypeString").Bind({"standard":"⁗"}, 4))
 Hotstring(":?B0COXZ:quad", Func("TypeString").Bind({"standard":" "}, 4))
+Hotstring(":?B0COXZ:1/10", Func("TypeString").Bind({"standard":"⅒"}, 4))
 Hotstring(":?B0COXZ:prop", Func("TypeString").Bind({"standard":"∝"}, 4))
 Hotstring(":?B0COXZ:sub=", Func("TypeString").Bind({"standard":"⊆"}, 4))
 Hotstring(":?B0COXZ:sup=", Func("TypeString").Bind({"standard":"⊇"}, 4))
@@ -119,6 +93,11 @@ Hotstring(":*?B0COX:tanh", Func("TypeString").Bind({"standard":"tanh"}, 3))
 Hotstring(":*?B0COX:sech", Func("TypeString").Bind({"standard":"sech"}, 3))
 Hotstring(":*?B0COX:csch", Func("TypeString").Bind({"standard":"csch"}, 3))
 Hotstring(":*?B0COX:coth", Func("TypeString").Bind({"standard":"coth"}, 3))
+Hotstring(":?COXZ:bold", Func("ChangeFont").Bind("bold"))
+Hotstring(":?COXZ:mono", Func("ChangeFont").Bind("monospace"))
+Hotstring(":?COXZ:frak", Func("ChangeFont").Bind("fraktur"))
+Hotstring(":?COXZ:sans", Func("ChangeFont").Bind("sansSerif"))
+Hotstring(":?COXZ:ital", Func("ChangeFont").Bind("italics"))
 Hotstring(":?B0COXZ:***", Func("TypeString").Bind({"standard":"⋆"}, 3))
 Hotstring(":?B0COXZ:|><", Func("TypeString").Bind({"standard":"⋉"}, 3))
 Hotstring(":?B0COXZ:><|", Func("TypeString").Bind({"standard":"⋊"}, 3))
@@ -126,6 +105,23 @@ Hotstring(":?B0COXZ:sum", Func("TypeString").Bind({"standard":"∑"}, 3))
 Hotstring(":?B0COXZ:int", Func("TypeString").Bind({"standard":"∫"}, 3))
 Hotstring(":?B0COXZ:...", Func("TypeString").Bind({"standard":"…"}, 3))
 Hotstring(":?B0COXZ:'''", Func("TypeString").Bind({"standard":"‴"}, 3))
+Hotstring(":?B0COXZ:1/4", Func("TypeString").Bind({"standard":"¼"}, 3))
+Hotstring(":?B0COXZ:1/2", Func("TypeString").Bind({"standard":"½"}, 3))
+Hotstring(":?B0COXZ:3/4", Func("TypeString").Bind({"standard":"¾"}, 3))
+Hotstring(":?B0COXZ:1/7", Func("TypeString").Bind({"standard":"⅐"}, 3))
+Hotstring(":?B0COXZ:1/9", Func("TypeString").Bind({"standard":"⅑"}, 3))
+Hotstring(":?B0COXZ:1/3", Func("TypeString").Bind({"standard":"⅓"}, 3))
+Hotstring(":?B0COXZ:2/3", Func("TypeString").Bind({"standard":"⅔"}, 3))
+Hotstring(":?B0COXZ:1/5", Func("TypeString").Bind({"standard":"⅕"}, 3))
+Hotstring(":?B0COXZ:2/5", Func("TypeString").Bind({"standard":"⅖"}, 3))
+Hotstring(":?B0COXZ:3/5", Func("TypeString").Bind({"standard":"⅗"}, 3))
+Hotstring(":?B0COXZ:4/5", Func("TypeString").Bind({"standard":"⅘"}, 3))
+Hotstring(":?B0COXZ:1/6", Func("TypeString").Bind({"standard":"⅙"}, 3))
+Hotstring(":?B0COXZ:5/6", Func("TypeString").Bind({"standard":"⅚"}, 3))
+Hotstring(":?B0COXZ:1/8", Func("TypeString").Bind({"standard":"⅛"}, 3))
+Hotstring(":?B0COXZ:3/8", Func("TypeString").Bind({"standard":"⅜"}, 3))
+Hotstring(":?B0COXZ:5/8", Func("TypeString").Bind({"standard":"⅝"}, 3))
+Hotstring(":?B0COXZ:7/8", Func("TypeString").Bind({"standard":"⅞"}, 3))
 Hotstring(":?B0COXZ:/_\", Func("TypeString").Bind({"standard":"△"}, 3))
 Hotstring(":?B0COXZ:_|_", Func("TypeString").Bind({"standard":"⊥"}, 3))
 Hotstring(":?B0COXZ:!<=", Func("TypeString").Bind({"standard":"≰"}, 3))
@@ -174,6 +170,7 @@ Hotstring(":*?B0COX:log", Func("TypeString").Bind({"standard":"log"}, 2))
 Hotstring(":*?B0COX:mod", Func("TypeString").Bind({"standard":"mod"}, 2))
 Hotstring(":*?B0COX:lim", Func("TypeString").Bind({"standard":"lim"}, 2))
 Hotstring(":*?B0COX:and", Func("TypeString").Bind({"standard":"and"}, 2))
+Hotstring(":?COXZ:rom", Func("ChangeFont").Bind("roman"))
 Hotstring(":?B0COXZ:**", Func("TypeString").Bind({"standard":"∗"}, 2))
 Hotstring(":?B0COXZ://", Func("TypeString").Bind({"standard":"⁄"}, 2))
 Hotstring(":?B0COXZ:xx", Func("TypeString").Bind({"standard":"×"}, 2))
@@ -248,6 +245,7 @@ Hotstring(":*?B0COX:/", Func("TypeString").Bind({"standard":"∕"}, 0))
 Hotstring(":*?B0COX:\", Func("TypeString").Bind({"standard":"∖"}, 0))
 Hotstring(":*?B0COX::", Func("TypeString").Bind({"standard":"∶"}, 0))
 Hotstring(":*?B0COX:!", Func("TypeString").Bind({"standard":"!"}, 0))
+Hotstring(":*?B0COX:@", Func("TypeString").Bind({"standard":"∘"}, 0))
 Hotstring(":*?B0COX:'", Func("TypeString").Bind({"standard":"′"}, 0))
 Hotstring(":*?B0COX: ", Func("TypeString").Bind({"standard":" "}, 0))
 Hotstring(":*?B0COX:(", Func("TypeString").Bind({"standard":"(","superscript":"⁽","subscript":"₍"}, 0))
@@ -256,8 +254,6 @@ Hotstring(":*?B0COX:[", Func("TypeString").Bind({"standard":"["}, 0))
 Hotstring(":*?B0COX:]", Func("TypeString").Bind({"standard":"]"}, 0))
 Hotstring(":*?B0COX:{", Func("TypeString").Bind({"standard":"{"}, 0))
 Hotstring(":*?B0COX:}", Func("TypeString").Bind({"standard":"}"}, 0))
-Hotstring(":*?B0COX:|", Func("TypeString").Bind({"standard":"|"}, 0))
-Hotstring(":*?B0COX:@", Func("TypeString").Bind({"standard":"∘"}, 0))
 Hotstring(":*?B0COX:=", Func("TypeString").Bind({"standard":"=","superscript":"⁼","subscript":"₌"}, 0))
 Hotstring(":*?B0COX:~", Func("TypeString").Bind({"standard":"∼"}, 0))
 Hotstring(":*?B0COX:<", Func("TypeString").Bind({"standard":"<"}, 0))
@@ -324,6 +320,9 @@ Hotstring(":*?B0COX:W", Func("TypeAlphanumeral").Bind({"superscript":"ᵂ","ital
 Hotstring(":*?B0COX:X", Func("TypeAlphanumeral").Bind({"italics":"𝑋","bold":"𝗫","doubleStruck":"𝕏","script":"𝒳","monospace":"𝚇","fraktur":"𝔛","sanSerif":"𝖷","roman":"X"}, 0))
 Hotstring(":*?B0COX:Y", Func("TypeAlphanumeral").Bind({"italics":"𝑌","bold":"𝗬","doubleStruck":"𝕐","script":"𝒴","monospace":"𝚈","fraktur":"𝔜","sanSerif":"𝖸","roman":"Y"}, 0))
 Hotstring(":*?B0COX:Z", Func("TypeAlphanumeral").Bind({"italics":"𝑍","bold":"𝗭","doubleStruck":"ℤ","script":"𝒵","monospace":"𝚉","fraktur":"ℨ","sanSerif":"𝖹","roman":"Z"}, 0))
+Hotstring(":?COXZ:^", Func("ChangeElevation").Bind("superscript"))
+Hotstring(":?COXZ:_", Func("ChangeElevation").Bind("subscript"))
+Hotstring(":?COXZ:|", Func("ChangeElevation").Bind("standard"))
 
 ^#!m::Suspend
 

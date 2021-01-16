@@ -9,40 +9,42 @@ Hotstring("EndChars", "\`n\`t")
 
 SendMode Input
 
-TypeString(variations, numBackspaces) {
-  Send, {bs %numBackspaces%}
-  toSend := variations["standard"]
-  SendRaw, %toSend%
-}
-
 global curFont := "italics"
+global curElevation := "standard"
   
 TypeAlphanumeral(variations, numBackspaces) {
+  simplifiedVariations := {"standard": variations[curFont], "superscript": variations["superscript"], "subscript": variations["subscript"]}
+  TypeString(simplifiedVariations, numBackspaces)
+}
+
+TypeString(variations, numBackspaces) {
   Send, {bs %numBackspaces%}
-  toSend := variations[curFont]
+  toSend := variations[curElevation]
   SendRaw, %toSend%
 }
 
 ChangeFont(newFont) {
-  if (newFont = "romanOrClosingQuote") {
-    if (curFont = "italics") {
-      curFont := "roman"
-    } else {
-      curFont := "italics"
-    }
-  } else {
-    curFont := newFont
-  }
+  curFont := newFont
+}
+
+ChangeElevation(newElevation) {
+  curElevation := newElevation
 }
 
 `;
 
 console.log(mappings);
 for (let mapping of mappings) {
-  if (mapping.type === 'keyword') {
-    ahkScript += `Hotstring(":*?COXZ:${mapping.input.replace('"', '""')}", Func("ChangeFont").Bind("${mapping.signal}"))\n`;
+  if (mapping.type === 'font') {
+    ahkScript += `Hotstring(":?COXZ:${mapping.input}", Func("ChangeFont").Bind("${mapping.signal}"))\n`;
     continue;
   }
+
+  if (mapping.type === 'elevation') {
+    ahkScript += `Hotstring(":?COXZ:${mapping.input}", Func("ChangeElevation").Bind("${mapping.signal}"))\n`;
+    continue;
+  }
+
 
   if (mapping.type === 'romanization') {
     ahkScript += `Hotstring(":*?B0COX:${mapping.input}", Func("TypeString").Bind(${JSON.stringify(mapping.output)}, ${mapping.input.length - 1}))\n`;

@@ -43,14 +43,16 @@ romanizationsObjects = romanizations.map(romanization => ({
   },
 }));
 
-combinedMappings = [...combinedMappings, ...romanizationsObjects];
-
-combinedMappings.sort((a, b) => b.input.length - a.input.length);
-
 keywords.fonts.forEach(fontKeyword => {
-  fontKeyword.type = 'keyword'
+  fontKeyword.type = 'font';
 });
 
-combinedMappings = [...keywords.fonts, ...combinedMappings];
+keywords.elevations.forEach(elevationKeyword => {
+  elevationKeyword.type = 'elevation';
+});
+
+combinedMappings = [...combinedMappings, ...romanizationsObjects, ...keywords.elevations, ...keywords.fonts];
+
+combinedMappings.sort((a, b) => b.input.length - a.input.length);
 
 module.exports = combinedMappings;
