@@ -5,7 +5,7 @@ var mappings = require('./combine-mappings');
 let script =
   `#SingleInstance force
 #NoEnv
-Hotstring("EndChars", "\`n\`t")
+Hotstring("EndChars", "\`t")
 
 SendMode Input
 

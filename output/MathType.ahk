@@ -1,6 +1,6 @@
 ﻿#SingleInstance force
 #NoEnv
-Hotstring("EndChars", "`n`t")
+Hotstring("EndChars", "`t")
 
 SendMode Input
 
@@ -139,7 +139,7 @@ Hotstring(":?B0COXZ:>->", Func("TypeString").Bind({"standard":"↣"}, 3))
 Hotstring(":?B0COXZ:->>", Func("TypeString").Bind({"standard":"↠"}, 3))
 Hotstring(":?B0COXZ:|->", Func("TypeString").Bind({"standard":"↦"}, 3))
 Hotstring(":?B0COXZ:<--", Func("TypeString").Bind({"standard":"⟵"}, 3))
-Hotstring(":?B0COXZ:<->", Func("TypeString").Bind({"standard":"↔"}, 3))
+Hotstring(":?B0COXZ:<->", Func("TypeString").Bind({"standard":"↔︎"}, 3))
 Hotstring(":?B0COXZ:^^^", Func("TypeString").Bind({"standard":"⋀"}, 3))
 Hotstring(":?B0COXZ:vvv", Func("TypeString").Bind({"standard":"⋁"}, 3))
 Hotstring(":?B0COXZ:nnn", Func("TypeString").Bind({"standard":"⋂"}, 3))

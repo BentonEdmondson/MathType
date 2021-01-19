@@ -156,7 +156,7 @@ module.exports = [
   { input: '|->', output: '↦' },
   { input: '<-', output: '←' },
   { input: '<--', output: '⟵' },
-  { input: '<->', output: '↔' },
+  { input: '<->', output: '↔\uFE0E' },
 
   { input: '^^', output: '∧' },
   { input: '^^^', output: '⋀' },
