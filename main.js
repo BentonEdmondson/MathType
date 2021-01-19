@@ -2,7 +2,7 @@ var fs = require('fs');
 var { exec } = require('child_process');
 var mappings = require('./combine-mappings');
 
-let ahkScript =
+let script =
   `#SingleInstance force
 #NoEnv
 Hotstring("EndChars", "\`n\`t")
@@ -33,36 +33,35 @@ ChangeElevation(newElevation) {
 
 `;
 
-console.log(mappings);
 for (let mapping of mappings) {
   if (mapping.type === 'font') {
-    ahkScript += `Hotstring(":?COXZ:${mapping.input}", Func("ChangeFont").Bind("${mapping.signal}"))\n`;
+    script += `Hotstring(":?COXZ:${mapping.input}", Func("ChangeFont").Bind("${mapping.signal}"))\n`;
     continue;
   }
 
   if (mapping.type === 'elevation') {
-    ahkScript += `Hotstring(":?COXZ:${mapping.input}", Func("ChangeElevation").Bind("${mapping.signal}"))\n`;
+    script += `Hotstring(":?COXZ:${mapping.input}", Func("ChangeElevation").Bind("${mapping.signal}"))\n`;
     continue;
   }
 
 
   if (mapping.type === 'romanization') {
-    ahkScript += `Hotstring(":*?B0COX:${mapping.input}", Func("TypeString").Bind(${JSON.stringify(mapping.output)}, ${mapping.input.length - 1}))\n`;
+    script += `Hotstring(":*?B0COX:${mapping.input}", Func("TypeString").Bind(${JSON.stringify(mapping.output)}, ${mapping.input.length - 1}))\n`;
     continue;
   }
 
   if (mapping.type === 'symbol' || mapping.type === 'alphanumeral') {
     if (mapping.input.length === 1 || mapping.input === '  ') {
-      ahkScript += `Hotstring(":*?B0COX:${mapping.input}", Func("${{ 'alphanumeral': 'TypeAlphanumeral', 'symbol': 'TypeString' }[mapping.type]}").Bind(${JSON.stringify(mapping.output)}, ${mapping.input.length - 1}))\n`;
+      script += `Hotstring(":*?B0COX:${mapping.input}", Func("${{ 'alphanumeral': 'TypeAlphanumeral', 'symbol': 'TypeString' }[mapping.type]}").Bind(${JSON.stringify(mapping.output)}, ${mapping.input.length - 1}))\n`;
       continue;
     } else {
-      ahkScript += `Hotstring(":?B0COXZ:${mapping.input}", Func("${{ 'alphanumeral': 'TypeAlphanumeral', 'symbol': 'TypeString' }[mapping.type]}").Bind(${JSON.stringify(mapping.output)}, ${mapping.input.length}))\n`;
+      script += `Hotstring(":?B0COXZ:${mapping.input}", Func("${{ 'alphanumeral': 'TypeAlphanumeral', 'symbol': 'TypeString' }[mapping.type]}").Bind(${JSON.stringify(mapping.output)}, ${mapping.input.length}))\n`;
       continue;
     }
   }
 }
 
-ahkScript +=
+script +=
   `
 ^#!m::Suspend
 
@@ -80,5 +79,11 @@ Hotstring("Reset")
 Return
 `;
 
-fs.writeFileSync('script.ahk', '\uFEFF' + ahkScript);
-exec('start script.ahk');
+fs.writeFileSync('output/MathType.ahk', '\uFEFF' + script);
+if (process.argv[2] === 'compile') {
+  exec(`.\\bin\\Ahk2Exe\\Ahk2Exe.exe /in .\\script.ahk /out output/MathType.exe`);
+  console.log('exe generated. Make sure to deactivate other scripts before running the exe.');
+} else {
+  exec('start output/MathType.ahk');
+  console.log('The AHK script is running.');
+}
