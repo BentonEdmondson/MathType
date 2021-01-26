@@ -338,3 +338,5 @@ Hotstring(":?COXZ:|", Func("ChangeElevation").Bind("standard"))
 ~RButton::
 Hotstring("Reset")
 Return
+
+Tab::Return

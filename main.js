@@ -77,12 +77,14 @@ script +=
 ~RButton::
 Hotstring("Reset")
 Return
+
+Tab::Return
 `;
 
 fs.writeFileSync('output/MathType.ahk', '\uFEFF' + script);
 if (process.argv[2] === 'compile') {
-  exec(`.\\bin\\Ahk2Exe\\Ahk2Exe.exe /in .\\script.ahk /out output/MathType.exe`);
-  console.log('exe generated. Make sure to deactivate other scripts before running the exe.');
+  exec(`.\\bin\\Ahk2Exe\\Ahk2Exe.exe /in output/MathType.ahk /out MathType.exe`);
+  console.log('An exe has been generated. Make sure to deactivate other scripts before running the exe.');
 } else {
   exec('start output/MathType.ahk');
   console.log('The AHK script is running.');
